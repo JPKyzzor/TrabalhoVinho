@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="rustic_background">#F0EDEE</color> <!-- Fundo claro -->
+    <color name="rustic_title">#4A235A</color> <!-- Roxo escuro para o título -->
+    <color name="rustic_input">#7DCEA0</color> <!-- Verde suave para campos de entrada -->
+    <color name="rustic_text">#283747</color> <!-- Tom escuro para o texto -->
+    <color name="rustic_button">#5B2C6F</color> <!-- Roxo profundo para o botão -->
+    <color name="rustic_button_text">#FFFFFF</color> <!-- Branco para texto do botão -->
+    <color name="rustic_link">#239B56</color> <!-- Verde vibrante para links -->
+
+
 </resources>

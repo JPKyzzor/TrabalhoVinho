@@ -9,7 +9,8 @@ public class CompraModel {
             COLUNA_ID_CLIENTE = "id_cliente",
             COLUNA_ID_VINHO = "id_vinho",
             COLUNA_DATA = "data",
-            COLUNA_QTD_VINHOS = "qtd_vinhos";
+            COLUNA_QTD_VINHOS = "qtd_vinhos",
+            COLUNA_PRECO_TOTAL = "preco_total";
 
     public static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + " (" +
@@ -19,6 +20,7 @@ public class CompraModel {
             COLUNA_ID_VINHO + " INTEGER NOT NULL, " +
             COLUNA_DATA + " TEXT NOT NULL, " +
             COLUNA_QTD_VINHOS + " INTEGER NOT NULL, " +
+            COLUNA_PRECO_TOTAL + " REAL NOT NULL, " +
             "FOREIGN KEY (" + COLUNA_ID_USUARIO + ") REFERENCES tb_usuarios(_id), " +
             "FOREIGN KEY (" + COLUNA_ID_CLIENTE + ") REFERENCES tb_clientes(_id), " +
             "FOREIGN KEY (" + COLUNA_ID_VINHO + ") REFERENCES tb_vinhos(_id)" +
@@ -33,6 +35,7 @@ public class CompraModel {
     private long id_vinho;
     private String data;
     private int qtd_vinhos;
+    private float preco_total;
 
     // Getters e Setters
     public long getId() {
@@ -81,5 +84,13 @@ public class CompraModel {
 
     public void setQtd_vinhos(int qtd_vinhos) {
         this.qtd_vinhos = qtd_vinhos;
+    }
+
+    public float getPreco_total() {
+        return preco_total;
+    }
+
+    public void setPreco_total(float preco_total) {
+        this.preco_total = preco_total;
     }
 }

@@ -17,7 +17,8 @@ public class CompraDAO extends AbstrataDAO {
             CompraModel.COLUNA_ID_CLIENTE,
             CompraModel.COLUNA_ID_VINHO,
             CompraModel.COLUNA_DATA,
-            CompraModel.COLUNA_QTD_VINHOS
+            CompraModel.COLUNA_QTD_VINHOS,
+            CompraModel.COLUNA_PRECO_TOTAL
     };
 
     public CompraDAO(Context context) {
@@ -34,6 +35,7 @@ public class CompraDAO extends AbstrataDAO {
             contentValues.put(CompraModel.COLUNA_ID_VINHO, compra.getId_vinho());
             contentValues.put(CompraModel.COLUNA_DATA, compra.getData());
             contentValues.put(CompraModel.COLUNA_QTD_VINHOS, compra.getQtd_vinhos());
+            contentValues.put(CompraModel.COLUNA_PRECO_TOTAL, compra.getPreco_total());
 
             insertRows = db.insert(CompraModel.TABLE_NAME, null, contentValues);
         } finally {
@@ -52,6 +54,7 @@ public class CompraDAO extends AbstrataDAO {
             contentValues.put(CompraModel.COLUNA_ID_VINHO, compra.getId_vinho());
             contentValues.put(CompraModel.COLUNA_DATA, compra.getData());
             contentValues.put(CompraModel.COLUNA_QTD_VINHOS, compra.getQtd_vinhos());
+            contentValues.put(CompraModel.COLUNA_PRECO_TOTAL, compra.getPreco_total());
 
             updateRows = db.update(CompraModel.TABLE_NAME, contentValues, CompraModel.COLUNA_ID + " = ?", new String[]{String.valueOf(compra.getId())});
         } finally {
@@ -85,6 +88,7 @@ public class CompraDAO extends AbstrataDAO {
                 compra.setId_vinho(cursor.getLong(3));
                 compra.setData(cursor.getString(4));
                 compra.setQtd_vinhos(cursor.getInt(5));
+                compra.setPreco_total(cursor.getFloat(6));
                 listaCompra.add(compra);
                 cursor.moveToNext();
             }

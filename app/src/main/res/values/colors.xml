@@ -10,14 +10,18 @@
     <color name="rustic_button_text">#FFFFFF</color> <!-- Branco para texto do botão -->
     <color name="rustic_link">#239B56</color> <!-- Verde vibrante para links -->
     <color name="marrom_escuro">#4C090A</color>
-    <color name="vermelho_profundo1">#6D0101</color>
+    <color name="vermelho_profundo1">#570303</color>
     <color name="vermelho_profundo2">#870202</color>
     <color name="roxo_escuro1">#4C0144</color>
     <color name="roxo_escuro2">#330030</color>
     <color name="fundo_suave">#F4F1EA</color> <!-- Cor de fundo suave -->
     <color name="cinza_claro">#D3D3D3</color> <!-- Cor dos campos de texto -->
     <color name="verde_acesso">#4CAF50</color> <!-- Cor dos botões -->
-    <color name="white">#FFFFFF</color> <!-- Cor do texto dos botões e campos -->
+    <!--usa essas cores pra baixo capitão -->
+
+    <color name="amarelo">#F3F2D2</color>
+    <color name="novoroxo">#480052</color>
+    <color name="novoamarelo">#E2D593</color>
 
 
 </resources>

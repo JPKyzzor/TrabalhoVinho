@@ -3,22 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/rustic_background"
+    android:background="@color/black"
     tools:context=".LoginActivity">
 
-    <!-- Título do aplicativo -->
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vinhos"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="@color/rustic_title"
+    <!-- Espaço para a logo -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Logo do aplicativo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="60dp" />
+        android:src="@drawable/logodevinho2" /> <!-- Substitua pelo caminho da sua logo -->
 
     <!-- Campo de email -->
     <EditText
@@ -27,12 +25,13 @@
         android:layout_height="wrap_content"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:backgroundTint="@color/rustic_input"
-        android:textColor="@color/rustic_text"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        android:backgroundTint="@color/cinza_claro"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp" />
 
@@ -43,8 +42,9 @@
         android:layout_height="wrap_content"
         android:hint="Senha"
         android:inputType="textPassword"
-        android:backgroundTint="@color/rustic_input"
-        android:textColor="@color/rustic_text"
+        android:backgroundTint="@color/cinza_claro"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintTop_toBottomOf="@id/emailEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,8 +58,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Entrar"
-        android:backgroundTint="@color/rustic_button"
-        android:textColor="@color/rustic_button_text"
+        android:backgroundTint="@color/verde_acesso"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/passwordEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,16 +68,18 @@
         android:layout_marginEnd="16dp" />
 
     <!-- Botão para criar uma nova conta -->
-    <TextView
+    <Button
         android:id="@+id/createAccountTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Criar uma conta"
-        android:textColor="@color/rustic_link"
-        android:textStyle="italic"
+        android:backgroundTint="@color/verde_acesso"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/loginButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

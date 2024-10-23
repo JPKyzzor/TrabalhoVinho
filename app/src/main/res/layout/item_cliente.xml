@@ -1,0 +1,48 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/clientNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome do Cliente"
+        android:textSize="18sp"
+        android:textColor="@color/novoroxo"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/clientCpfCnpjTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPF/CNPJ"
+        android:textColor="@color/novoroxo" />
+
+    <TextView
+        android:id="@+id/clientAddressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço"
+        android:textColor="@color/novoroxo" />
+
+    <TextView
+        android:id="@+id/clientPhoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone"
+        android:textColor="@color/novoroxo" />
+
+    <Button
+        android:id="@+id/editClientButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        android:backgroundTint="@color/novoroxo"
+        android:textColor="@color/white"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

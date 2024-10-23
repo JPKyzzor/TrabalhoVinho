@@ -6,7 +6,6 @@
     android:padding="16dp"
     android:background="@color/amarelo">
 
-    <!-- Título -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,10 +13,18 @@
         android:textSize="24sp"
         android:textColor="@color/novoroxo"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
         android:textStyle="bold" />
 
-    <!-- ListView para exibir a lista de clientes -->
+    <Button
+        android:id="@+id/addClientButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar_novo_cliente1"
+        android:backgroundTint="@color/novoroxo"
+        android:textColor="@color/branco"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
     <ListView
         android:id="@+id/clientListView"
         android:layout_width="match_parent"
@@ -25,14 +32,4 @@
         android:layout_weight="1"
         android:divider="@color/novoroxo"
         android:dividerHeight="1dp" />
-
-    <!-- Botão para adicionar novos clientes -->
-    <Button
-        android:id="@+id/addClientButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cadastrar_novo_cliente1"
-        android:backgroundTint="@color/novoroxo"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp"/>
 </LinearLayout>

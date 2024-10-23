@@ -42,7 +42,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/card_background"
         android:layout_marginTop="16dp"
         android:padding="16dp"
         android:gravity="center">
@@ -85,7 +84,7 @@
         android:layout_height="wrap_content"
         android:text="Voltar"
         android:backgroundTint="@color/novoroxo"
-        android:textColor="@color/white"
+        android:textColor="@color/branco"
         android:layout_marginTop="24dp" />
 
 </LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/botoesdomenu_background"
+    android:weightSum="10">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="9">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum='10'>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nomeCliente"
+                android:text="@string/placeholderNomeCliente"
+                android:layout_weight="5"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/enderecoCliente"
+                android:text="@string/placeholderEnderecoCliente"
+                android:layout_weight="5"
+                android:textSize="16sp"
+                android:textAlignment="textStart"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/telefoneCliente"
+                android:text="@string/placeholderTelefoneCliente"
+                android:layout_weight="5"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cpfCnpjCliente"
+                android:text="@string/placeholderCpfCnpjCliente"
+                android:layout_weight="5"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/botaoEditar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:src="@drawable/iconeeditar"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"/>
+
+</LinearLayout>

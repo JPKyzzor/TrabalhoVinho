@@ -13,8 +13,17 @@
         android:textSize="24sp"
         android:textColor="@color/novoroxo"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/addWineButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Novo Vinho"
+        android:backgroundTint="@color/novoroxo"
+        android:textColor="@color/branco"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
     <ListView
         android:id="@+id/wineListView"
@@ -23,13 +32,4 @@
         android:layout_weight="1"
         android:divider="@color/novoroxo"
         android:dividerHeight="1dp" />
-
-    <Button
-        android:id="@+id/addWineButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cadastrar Novo Vinho"
-        android:backgroundTint="@color/novoroxo"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp" />
 </LinearLayout>

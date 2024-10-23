@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="rustic_background">#F0EDEE</color> <!-- Fundo claro -->
-    <color name="roxinho">#C576F2</color> <!-- Roxo escuro para o título -->
-    <color name="rustic_input">#7DCEA0</color> <!-- Verde suave para campos de entrada -->
-    <color name="rustic_text">#283747</color> <!-- Tom escuro para o texto -->
-    <color name="rustic_button">#B53DE2</color> <!-- Roxo profundo para o botão -->
-    <color name="rustic_button_text">#FFFFFF</color> <!-- Branco para texto do botão -->
-    <color name="rustic_link">#239B56</color> <!-- Verde vibrante para links -->
-    <color name="marrom_escuro">#4C090A</color>
-    <color name="vermelho_profundo1">#570303</color>
-    <color name="vermelho_profundo2">#870202</color>
-    <color name="roxo_escuro1">#4C0144</color>
-    <color name="roxo_escuro2">#330030</color>
-    <color name="fundo_suave">#F4F1EA</color> <!-- Cor de fundo suave -->
-    <color name="cinza_claro">#D3D3D3</color> <!-- Cor dos campos de texto -->
-    <color name="verde_acesso">#4CAF50</color> <!-- Cor dos botões -->
-    <!--usa essas cores pra baixo capitão -->
-    <!-- nao usa as cores de cima, acho que vai ficar confuso demais, e evita o novo amarelo-->
-
+    <color name="branco">#FFFFFF</color>
     <color name="amarelo">#F3F2D2</color>
     <color name="novoroxo">#480052</color>
     <color name="novoamarelo">#E2D593</color>
+    <color name="transparente">#00000000</color>
+    <color name="saldoPositivo">#237840</color>
+    <color name="saldoNegativo">#C84747</color>
 
 
 </resources>

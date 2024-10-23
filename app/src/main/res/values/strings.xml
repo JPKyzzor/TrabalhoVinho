@@ -34,4 +34,22 @@
     <string name="logo_do_aplicativo">Logo do aplicativo</string>
     <string name="cadastrar_novo_cliente1">Cadastrar Novo Cliente</string>
     <string name="lista_de_clientes1">Lista de Clientes</string>
+
+    //Itens clientes
+    <string name="placeholderNomeCliente">Exemplo da Silva</string>
+    <string name="placeholderEnderecoCliente">Criciúma/SC</string>
+    <string name="placeholderCpfCnpjCliente">123.456.789-00</string>
+    <string name="placeholderTelefoneCliente">(51)995459125</string>
+
+    //Itens vinhos
+    <string name="placeholderNomeVinho">Exemplo nome de vinho</string>
+    <string name="placeholderTipoVinho">Rose</string>
+    <string name="placeholderSafraVinho">10/2024</string>
+    <string name="placeholderPrecoVinho">R$1234,00</string>
+    <string name="placeholderEstoqueVinho">110</string>
+
+    //Itens vendas
+    <string name="placeholderQtdVendidos">12</string>
+    <string name="placeholderPrecoTotal">R$12347,00</string>
+    <string name="placeholderData">10/10/2024</string>
 </resources>

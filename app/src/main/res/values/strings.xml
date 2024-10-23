@@ -34,6 +34,12 @@
     <string name="logo_do_aplicativo">Logo do aplicativo</string>
     <string name="cadastrar_novo_cliente1">Cadastrar Novo Cliente</string>
     <string name="lista_de_clientes1">Lista de Clientes</string>
+    <string name="cadastrar_compra">Cadastrar Compra</string>
+    <string name="valor_total_venda">Valor total da venda</string>
+    <string name="quantidade_vinhos">Quantidade de vinhos</string>
+    <string name="voltar">Voltar</string>
+    <string name="selecione_cliente">Selecionar cliente</string>
+    <string name="selecione_vinho">Selecionar vinho</string>
 
     //Itens clientes
     <string name="placeholderNomeCliente">Exemplo da Silva</string>

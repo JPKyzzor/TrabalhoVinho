@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:text="@string/cadastrar"
         android:backgroundTint="@color/novoroxo"
-        android:textColor="@color/white"
+        android:textColor="@color/branco"
         android:layout_marginTop="24dp" />
 
     <Button

@@ -20,56 +20,61 @@
         android:id="@+id/nomedovinho"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
         android:hint="Nome do Vinho"
         android:inputType="text"
-        android:background="@drawable/button_background"
+        android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/novoroxo"
-        android:layout_marginBottom="10dp" />
+        android:textColor="@color/novoroxo" />
 
     <EditText
         android:id="@+id/tipodovinho"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
         android:hint="Tipo de Vinho"
         android:inputType="text"
-        android:background="@drawable/button_background"
+        android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/novoroxo"
-        android:layout_marginBottom="10dp" />
+        android:textColor="@color/novoroxo" />
 
     <EditText
         android:id="@+id/safradovinho"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
         android:hint="Safra do Vinho"
         android:inputType="number"
-        android:background="@drawable/button_background"
+        android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/novoroxo"
-        android:layout_marginBottom="10dp" />
+        android:textColor="@color/novoroxo" />
 
     <EditText
         android:id="@+id/precodovinho"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
         android:hint="Preço do Vinho"
         android:inputType="numberDecimal"
-        android:background="@drawable/button_background"
+        android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/novoroxo"
-        android:layout_marginBottom="10dp" />
+        android:textColor="@color/novoroxo" />
 
     <EditText
         android:id="@+id/estoquedevinho"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_background"
         android:hint="Estoque"
         android:inputType="number"
-        android:background="@drawable/button_background"
+        android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/novoroxo"
-        android:layout_marginBottom="16dp" />
+        android:textColor="@color/novoroxo" />
 
     <Button
         android:id="@+id/saveWineButton"
@@ -77,7 +82,7 @@
         android:layout_height="wrap_content"
         android:text="Salvar Vinho"
         android:backgroundTint="@color/novoroxo"
-        android:textColor="@color/white"
+        android:textColor="@color/branco"
         android:layout_marginTop="16dp" />
 
 </LinearLayout>

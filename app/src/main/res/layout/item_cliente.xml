@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:text="Editar"
         android:backgroundTint="@color/novoroxo"
-        android:textColor="@color/white"
+        android:textColor="@color/branco"
         android:layout_gravity="end"
         android:layout_marginTop="8dp" />
 </LinearLayout>

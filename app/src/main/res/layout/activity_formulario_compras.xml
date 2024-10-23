@@ -1,0 +1,68 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/amarelo"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <Spinner
+        android:id="@+id/clienteSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
+        android:spinnerMode="dropdown"
+        android:prompt="@string/selecione_cliente" />
+
+    <Spinner
+        android:id="@+id/vinhoSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
+        android:spinnerMode="dropdown"
+        android:prompt="@string/selecione_vinho"
+        android:contentDescription="Formato: Nome do Vinho - Safra do Vinho - Preço Unitário" />
+
+    <EditText
+        android:id="@+id/quantidadeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/quantidade_vinhos"
+        android:inputType="number"
+        android:backgroundTint="@color/novoroxo"
+        android:textColor="@color/novoroxo"
+        android:textColorHint="@color/novoroxo"
+        android:layout_marginTop="16dp"
+        android:enabled="false" />
+
+    <TextView
+        android:id="@+id/valorTotalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valor_total_venda"
+        android:textColor="@color/novoroxo"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/cadastrarCompraButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar_compra"
+        android:backgroundTint="@color/novoroxo"
+        android:textColor="@color/white"
+        android:layout_marginTop="24dp"
+        android:enabled="false" />
+
+    <Button
+        android:id="@+id/voltarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/voltar"
+        android:background="@drawable/button_background"
+        android:textColor="@color/novoroxo"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

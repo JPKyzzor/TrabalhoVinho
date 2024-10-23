@@ -1,6 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/amarelo"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/mdsvinhoemhd"
+        android:contentDescription="Logo do aplicativo" />
+
+    <!-- Título Esqueceu sua senha -->
+    <TextView
+        android:id="@+id/forgotPasswordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esqueceu sua senha?"
+        android:textSize="20sp"
+        android:textColor="@color/novoroxo"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp" />
+
+    <!-- Texto explicativo -->
+    <TextView
+        android:id="@+id/forgotPasswordDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entre em contato com a pessoa responsável que vai ajudar na assistência da troca de senha"
+        android:textColor="@color/novoroxo"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center" />
+
+    <!-- Informações de contato -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/card_background"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/contactIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/zipzarpson" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/contactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="João da Silva"
+                android:textColor="@color/novoroxo"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contactPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(55) 9 9911.9911"
+                android:textColor="@color/novoroxo"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botão de voltar -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:backgroundTint="@color/novoroxo"
+        android:textColor="@color/white"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

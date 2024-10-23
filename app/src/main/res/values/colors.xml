@@ -18,6 +18,7 @@
     <color name="cinza_claro">#D3D3D3</color> <!-- Cor dos campos de texto -->
     <color name="verde_acesso">#4CAF50</color> <!-- Cor dos botões -->
     <!--usa essas cores pra baixo capitão -->
+    <!-- nao usa as cores de cima, acho que vai ficar confuso demais, e evita o novo amarelo-->
 
     <color name="amarelo">#F3F2D2</color>
     <color name="novoroxo">#480052</color>

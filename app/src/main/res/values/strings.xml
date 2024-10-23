@@ -1,4 +1,37 @@
 <resources>
     <string name="app_name">TrabalhoVinho</string>
     <string name="Fulano">testo fulano</string>
+    <string name="Logout">botao de logout</string>
+    <string name="vendas">Vendas</string>
+    <string name="relat_rio_por_m_s">Relatório por Mês</string>
+    <string name="relat_rio_por_cliente">Relatório por Cliente</string>
+    <string name="vinhos">Vinhos</string>
+    <string name="clientes">Clientes</string>
+    <string name="menu">Menu</string>
+    <string name="online">Online</string>
+    <string name="logout">Logout</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
+    <string name="todo5">TODO</string>
+    <string name="lista_de_clientes">Lista de Clientes</string>
+    <string name="cadastrar_novo_cliente">Cadastrar Novo Cliente</string>
+    <string name="telefone">Telefone</string>
+    <string name="cidade_e_estado">Cidade e Estado</string>
+    <string name="salvar_cliente">Salvar Cliente</string>
+    <string name="cpf_ou_cnpj">CPF ou CNPJ</string>
+    <string name="nome">Nome</string>
+    <string name="cadastrar_cliente">Cadastrar Cliente</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="voltar_para_login">Voltar para Login</string>
+    <string name="cpf">CPF</string>
+    <string name="endere_o">Endereço</string>
+    <string name="telefone1">Telefone</string>
+    <string name="senha">Senha</string>
+    <string name="email">Email</string>
+    <string name="logo_do_aplicativo">Logo do aplicativo</string>
+    <string name="cadastrar_novo_cliente1">Cadastrar Novo Cliente</string>
+    <string name="lista_de_clientes1">Lista de Clientes</string>
 </resources>

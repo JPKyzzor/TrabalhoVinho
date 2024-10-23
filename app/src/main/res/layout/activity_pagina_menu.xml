@@ -1,200 +1,217 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/amarelo"
     android:padding="16dp">
 
-    <!-- Título da tela -->
+    <!-- titulo -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Menu"
+        android:text="@string/menu"
         android:textSize="24sp"
         android:textColor="@color/novoroxo"
         android:layout_gravity="center_horizontal"
         android:paddingBottom="16dp" />
 
-    <!-- Indicador de status online -->
+    <!-- status -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Online"
+        android:text="@string/online"
         android:textColor="@color/novoroxo"
         android:layout_gravity="center_horizontal"
         android:paddingBottom="16dp" />
 
-    <!-- Layout para a primeira linha de botões -->
+    <!-- linha 1 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="16dp">
 
-        <!-- Botão Clientes -->
+        <!-- clientes -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_margin="8dp">
+            android:layout_margin="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@drawable/botoesdomenu_background"
+                android:contentDescription="@string/todo"
                 android:padding="8dp"
-                android:src="@drawable/iconedevinho" />
+                android:src="@drawable/iconedeclientes2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Clientes"
+                android:text="@string/clientes"
                 android:textColor="@color/novoroxo"
                 android:textSize="18sp" />
         </LinearLayout>
 
-        <!-- Botão Vinhos -->
+        <!-- vinhos -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_margin="8dp">
+            android:layout_margin="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@drawable/botoesdomenu_background"
+                android:contentDescription="@string/todo1"
                 android:padding="8dp"
-                android:src="@drawable/iconedevinho" />
+                android:src="@drawable/iconedevinho2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vinhos"
+                android:text="@string/vinhos"
                 android:textColor="@color/novoroxo"
                 android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <!-- Layout para a segunda linha de botões -->
+    <!-- linha 2 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="16dp">
 
-        <!-- Botão Vendas -->
+        <!-- vendas -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_margin="8dp">
+            android:layout_margin="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@drawable/botoesdomenu_background"
+                android:contentDescription="@string/todo2"
                 android:padding="8dp"
-                android:src="@drawable/iconedevinho" />
+                android:src="@drawable/iconedevendas" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vendas"
+                android:text="@string/vendas"
                 android:textColor="@color/novoroxo"
                 android:textSize="18sp" />
         </LinearLayout>
 
-        <!-- Botão Relatório por Cliente -->
+        <!-- relatório de cliente -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_margin="8dp">
+            android:layout_margin="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@drawable/botoesdomenu_background"
+                android:contentDescription="@string/todo3"
                 android:padding="8dp"
-                android:src="@drawable/iconedevinho" />
+                android:src="@drawable/iconerelatoriodeclientes" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Relatório por Cliente"
+                android:text="@string/relat_rio_por_cliente"
                 android:textColor="@color/novoroxo"
                 android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <!-- Layout para a terceira linha de botões -->
+    <!-- linha 3 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="16dp">
 
-        <!-- Botão Relatório por Mês -->
+        <!-- relatório mes -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_margin="8dp">
+            android:layout_margin="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@drawable/botoesdomenu_background"
+                android:contentDescription="@string/todo4"
                 android:padding="8dp"
-                android:src="@drawable/iconedevinho" />
+                android:src="@drawable/iconerelatoriopormes" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Relatório por Mês"
+                android:text="@string/relat_rio_por_m_s"
                 android:textColor="@color/novoroxo"
                 android:textSize="18sp" />
         </LinearLayout>
 
-        <!-- Botão Logoff -->
+        <!-- logout -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_margin="8dp">
+            android:layout_margin="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:background="@drawable/botoesdomenu_background"
+                android:contentDescription="@string/todo5"
                 android:padding="8dp"
-                android:src="@drawable/iconedevinho" />
+                android:src="@drawable/iconedelogout" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logoff"
+                android:text="@string/logout"
                 android:textColor="@color/novoroxo"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
     </LinearLayout>

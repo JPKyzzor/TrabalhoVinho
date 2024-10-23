@@ -1,136 +1,95 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/amarelo"
-    tools:context="RegisterActivity">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-    <!-- espaço para a logo -->
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="40dp"
-        android:contentDescription="Logo do aplicativo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/mdsvinhoemhd" /> <!-- Substitua pelo caminho da sua logo -->
+        android:contentDescription="@string/logo_do_aplicativo"
+        android:src="@drawable/mdsvinhoemhd" />
 
-    <!-- campo de email -->
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        app:layout_constraintTop_toBottomOf="@id/logoImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        tools:ignore="Autofill" />
 
-    <!-- campo de senha -->
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:inputType="textPassword"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        app:layout_constraintTop_toBottomOf="@id/emailEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        tools:ignore="Autofill" />
 
-    <!-- campo de telefone -->
     <EditText
         android:id="@+id/phoneEditText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Telefone"
+        android:hint="@string/telefone1"
         android:inputType="phone"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        tools:ignore="Autofill" />
 
-    <!-- campo de endereço -->
     <EditText
         android:id="@+id/addressEditText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Endereço"
+        android:hint="@string/endere_o"
         android:inputType="textPostalAddress"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        app:layout_constraintTop_toBottomOf="@id/phoneEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginTop="16dp" />
 
-    <!-- campo de CPF -->
     <EditText
         android:id="@+id/cpfEditText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CPF"
+        android:hint="@string/cpf"
         android:inputType="number"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        app:layout_constraintTop_toBottomOf="@id/addressEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        tools:ignore="Autofill" />
 
-    <!-- botão de cadastrar -->
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar"
+        android:text="@string/cadastrar"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/cpfEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginTop="24dp" />
 
-    <!-- botão de voltar para login -->
     <Button
         android:id="@+id/backToLoginButton"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Voltar para Login"
+        android:text="@string/voltar_para_login"
         android:background="@drawable/button_background"
         android:textColor="@color/novoroxo"
-        app:layout_constraintTop_toBottomOf="@id/registerButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginTop="24dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

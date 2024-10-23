@@ -1,6 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/amarelo">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar_cliente"
+        android:textSize="24sp"
+        android:textColor="@color/novoroxo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/clientNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/nome"
+        android:textColor="@color/novoroxo"
+        android:textColorHint="@color/novoroxo"
+        android:backgroundTint="@color/novoroxo"
+        android:layout_marginBottom="16dp"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/clientCpfCnpjEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="" android:hint="@string/cpf_ou_cnpj"
+        android:inputType="number"
+        android:textColor="@color/novoroxo"
+        android:textColorHint="@color/novoroxo"
+        android:backgroundTint="@color/novoroxo"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/clientAddressEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="" android:hint="@string/cidade_e_estado"
+        android:textColor="@color/novoroxo"
+        android:textColorHint="@color/novoroxo"
+        android:backgroundTint="@color/novoroxo"
+        android:layout_marginBottom="16dp"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/clientPhoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/telefone"
+        android:inputType="phone"
+        android:textColor="@color/novoroxo"
+        android:textColorHint="@color/novoroxo"
+        android:backgroundTint="@color/novoroxo"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/saveClientButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/salvar_cliente"
+        android:backgroundTint="@color/novoroxo"
+        android:textColor="@color/white"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

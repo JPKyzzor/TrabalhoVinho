@@ -19,59 +19,64 @@
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:backgroundTint="@color/novoroxo"
+        android:minHeight="48dp"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        android:layout_marginTop="16dp"
         tools:ignore="Autofill" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
         android:hint="@string/senha"
         android:inputType="textPassword"
-        android:backgroundTint="@color/novoroxo"
+        android:minHeight="48dp"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        android:layout_marginTop="16dp"
         tools:ignore="Autofill" />
 
     <EditText
         android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
         android:hint="@string/telefone1"
         android:inputType="phone"
-        android:backgroundTint="@color/novoroxo"
+        android:minHeight="48dp"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        android:layout_marginTop="16dp"
         tools:ignore="Autofill" />
 
     <EditText
         android:id="@+id/addressEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
         android:hint="@string/endere_o"
         android:inputType="textPostalAddress"
-        android:backgroundTint="@color/novoroxo"
+        android:minHeight="48dp"
         android:textColor="@color/novoroxo"
-        android:textColorHint="@color/novoroxo"
-        android:layout_marginTop="16dp" />
+        android:textColorHint="@color/novoroxo" />
 
     <EditText
         android:id="@+id/cpfEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
         android:hint="@string/cpf"
         android:inputType="number"
-        android:backgroundTint="@color/novoroxo"
+        android:minHeight="48dp"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
-        android:layout_marginTop="16dp"
         tools:ignore="Autofill" />
 
     <Button

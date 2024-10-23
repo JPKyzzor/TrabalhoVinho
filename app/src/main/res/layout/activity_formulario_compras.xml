@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/novoroxo"
-        android:spinnerMode="dropdown"
-        android:prompt="@string/selecione_cliente" />
+        android:minHeight="48dp"
+        android:prompt="@string/selecione_cliente"
+        android:spinnerMode="dropdown" />
 
     <Spinner
         android:id="@+id/vinhoSpinner"
@@ -22,21 +23,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/novoroxo"
-        android:spinnerMode="dropdown"
+        android:contentDescription="Formato: Nome do Vinho - Safra do Vinho - Preço Unitário"
+        android:minHeight="48dp"
         android:prompt="@string/selecione_vinho"
-        android:contentDescription="Formato: Nome do Vinho - Safra do Vinho - Preço Unitário" />
+        android:spinnerMode="dropdown" />
 
     <EditText
         android:id="@+id/quantidadeEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
+        android:enabled="false"
         android:hint="@string/quantidade_vinhos"
         android:inputType="number"
-        android:backgroundTint="@color/novoroxo"
+        android:minHeight="48dp"
         android:textColor="@color/novoroxo"
-        android:textColorHint="@color/novoroxo"
-        android:layout_marginTop="16dp"
-        android:enabled="false" />
+        android:textColorHint="@color/novoroxo" />
 
     <TextView
         android:id="@+id/valorTotalTextView"

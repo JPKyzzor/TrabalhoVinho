@@ -80,7 +80,7 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
                     mostrarAlerta("Erro", "Campo de confirmação de senha não está preenchido", "Ok");
                     return;
                 }
-                if(!usuarioDAO.checkIfEmailExists(email)){
+                if(usuarioDAO.checkIfEmailExists(email)){
                     mostrarAlerta("Erro", "Email já está em uso", "Ok");
                     return;
                 }

@@ -1,13 +1,22 @@
 package com.example.trabalhovinho.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.trabalhovinho.FormularioClienteActivity;
+import com.example.trabalhovinho.PaginaListaClientesActivity;
+import com.example.trabalhovinho.PaginaLoginActivity;
 import com.example.trabalhovinho.R;
+import com.example.trabalhovinho.Shared.SharedKeys;
 import com.example.trabalhovinho.database.model.ClienteModel;
 
 import java.util.ArrayList;
@@ -53,6 +62,19 @@ public class ClienteAdapter extends BaseAdapter {
 
         TextView telefone = convertView.findViewById(R.id.telefoneCliente);
         telefone.setText(cliente.getTelefone());
+
+        ImageButton botaoEdit = convertView.findViewById(R.id.botaoEditar);
+        botaoEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putLong(SharedKeys.KEY_ID_CLIENTE_EDIT, cliente.getId());
+                edit.apply();
+                Intent it = new Intent(activity, FormularioClienteActivity.class);
+                activity.startActivity(it);
+            }
+        });
         return convertView;
     }
 

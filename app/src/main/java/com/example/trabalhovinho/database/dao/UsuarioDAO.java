@@ -116,13 +116,11 @@ public class UsuarioDAO extends AbstrataDAO {
     }
 
     public boolean checkIfEmailExists(String email) {
-        boolean existe = false;
+        boolean existe;
         try {
             Open();
             Cursor cursor = db.query(UsuarioModel.TABLE_NAME, colunas, UsuarioModel.COLUNA_EMAIL + " = ?", new String[]{email}, null, null, null);
-            if (!cursor.moveToFirst()) {
-                existe = true;
-            }
+            existe = cursor.moveToFirst();
             cursor.close();
             return existe;
         } finally {

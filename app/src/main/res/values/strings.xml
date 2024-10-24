@@ -19,7 +19,6 @@
     <string name="lista_de_clientes">Lista de Clientes</string>
     <string name="cadastrar_novo_cliente">Cadastrar Novo Cliente</string>
     <string name="telefone">Telefone</string>
-    <string name="cidade_e_estado">Cidade e Estado</string>
     <string name="salvar_cliente">Salvar Cliente</string>
     <string name="cpf_ou_cnpj">CPF ou CNPJ</string>
     <string name="nome">Nome</string>
@@ -40,15 +39,23 @@
     <string name="voltar">Voltar</string>
     <string name="selecione_cliente">Selecionar cliente</string>
     <string name="selecione_vinho">Selecionar vinho</string>
+
+    //UTILITARIOS
+    <string name="ok">Ok</string>
+    <string name='cancelar'>Cancelar</string>
+
     //PAGINA LOGIN
     <string name="incorreto">Email ou senha incorretos.</string>
-    <string name="ok">Ok</string>
 
     //CADASTRO USUARIO
     <string name="confirmarSenha">Confirmar senha</string>
 
     //MENU
     <string name="ola">Olá </string>
+
+    //Formulario Clientes
+    <string name="estado">Estado</string>
+    <string name="cidade">Cidade</string>
 
     //Itens clientes
     <string name="placeholderNomeCliente">Exemplo da Silva</string>

@@ -44,17 +44,28 @@
         android:textColorHint="@color/novoroxo" />
 
     <EditText
-        android:id="@+id/clientAddressEditText"
+        android:id="@+id/clientCityEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:backgroundTint="@color/novoroxo"
-        android:hint="@string/cidade_e_estado"
+        android:hint="@string/cidade"
         android:minHeight="48dp"
         android:textColor="@color/novoroxo"
-        android:textColorHint="@color/novoroxo"
-        tools:ignore="TextFields" />
+        android:textColorHint="@color/novoroxo"/>
+
+    <EditText
+        android:id="@+id/clientStateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:backgroundTint="@color/novoroxo"
+        android:hint="@string/estado"
+        android:minHeight="48dp"
+        android:textColor="@color/novoroxo"
+        android:textColorHint="@color/novoroxo" />
 
     <EditText
         android:id="@+id/clientPhoneEditText"
@@ -76,6 +87,14 @@
         android:text="@string/salvar_cliente"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/branco"
+        android:layout_marginTop="24dp" />
+    <Button
+        android:id="@+id/cancelClientButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelar"
+        android:background="@drawable/button_background"
+        android:textColor="@color/novoroxo"
         android:layout_marginTop="24dp" />
 
 </LinearLayout>

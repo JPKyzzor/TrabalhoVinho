@@ -129,4 +129,27 @@ public class UsuarioDAO extends AbstrataDAO {
             Close();
         }
     }
+
+    public UsuarioModel getUserByEmail(String email) {
+        UsuarioModel usuario = null;
+        try {
+            Open();
+            String queryString = UsuarioModel.COLUNA_EMAIL + " = ?";
+            Cursor cursor = db.query(UsuarioModel.TABLE_NAME, colunas, queryString , new String[]{email}, null, null, null);
+            if (cursor != null && cursor.moveToFirst()) {
+                usuario = new UsuarioModel();
+                usuario.setId(cursor.getLong(0));
+                usuario.setNome(cursor.getString(1));
+                usuario.setEmail(cursor.getString(2));
+                usuario.setSenha(cursor.getString(3));
+                usuario.setSalt(cursor.getString(4));
+            }
+            if (cursor != null) {
+                cursor.close();
+            }
+            return usuario;
+        } finally {
+            Close();
+        }
+    }
 }

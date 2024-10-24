@@ -3,6 +3,7 @@ package com.example.trabalhovinho;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -61,6 +62,24 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
                     mostrarAlerta("Erro", "Campo senha não está preenchido", "Ok");
                     return;
                 }
+                if (!nome.matches("[a-zA-Z\\p{L}\\s]+")) {
+                    mostrarAlerta("Erro", "O nome não pode conter números ou caracteres especiais", "Ok");
+                    return;
+                }
+                int maxNameLength = 50;
+                int maxEmailLength = 100;
+                if (nome.length() > maxNameLength) {
+                    mostrarAlerta("Erro", "O nome é muito longo", "Ok");
+                    return;
+                }
+                if (email.length() > maxEmailLength) {
+                    mostrarAlerta("Erro", "O e-mail é muito longo", "Ok");
+                    return;
+                }
+                if (senha2.isEmpty()) {
+                    mostrarAlerta("Erro", "Campo de confirmação de senha não está preenchido", "Ok");
+                    return;
+                }
                 if(!usuarioDAO.checkIfEmailExists(email)){
                     mostrarAlerta("Erro", "Email já está em uso", "Ok");
                     return;
@@ -69,13 +88,22 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
                     mostrarAlerta("Erro", "Senhas não coincidem", "Ok");
                     return;
                 }
+                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    mostrarAlerta("Erro", "E-mail inválido", "Ok");
+                    return;
+                }
+                if (senha.length() < 8 || !senha.matches(".*[A-Z].*") || !senha.matches(".*[a-z].*") || !senha.matches(".*\\d.*") || !senha.matches(".*[@#^$%!&*].*")) {
+                    mostrarAlerta("Erro", "A senha deve ter no mínimo 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.", "Ok");
+                    return;
+                }
                 byte[] salt = PasswordUtils.generateSalt();
+                String saltString = Base64.encodeToString(salt, Base64.DEFAULT);
                 String senhaCriptoGrafada = PasswordUtils.generateHash(senha,salt);
                 UsuarioModel usuario = new UsuarioModel();
                 usuario.setNome(nome);
                 usuario.setEmail(email);
                 usuario.setSenha(senhaCriptoGrafada);
-                usuario.setSalt(salt.toString());
+                usuario.setSalt(saltString);
                 usuarioDAO.insert(usuario);
                 mostrarAlerta2("Sucesso","Usuário criado com sucesso", "Ir para login");
             }

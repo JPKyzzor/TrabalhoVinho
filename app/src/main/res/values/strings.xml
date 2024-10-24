@@ -47,6 +47,9 @@
     //CADASTRO USUARIO
     <string name="confirmarSenha">Confirmar senha</string>
 
+    //MENU
+    <string name="ola">Olá </string>
+
     //Itens clientes
     <string name="placeholderNomeCliente">Exemplo da Silva</string>
     <string name="placeholderEnderecoCliente">Criciúma/SC</string>

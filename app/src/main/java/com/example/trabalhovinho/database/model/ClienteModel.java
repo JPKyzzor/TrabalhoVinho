@@ -17,7 +17,7 @@ public class ClienteModel {
                     COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUNA_ID_USUARIO + " INTEGER NOT NULL, " +
                     COLUNA_NOME + " TEXT NOT NULL, " +
-                    COLUNA_CPF_CNPJ + " TEXT NOT NULL UNIQUE, " +
+                    COLUNA_CPF_CNPJ + " TEXT NOT NULL, " +
                     COLUNA_CIDADE + " TEXT NOT NULL, " +
                     COLUNA_ESTADO + " TEXT NOT NULL, " +
                     COLUNA_TELEFONE + " TEXT NOT NULL, " +
@@ -34,6 +34,11 @@ public class ClienteModel {
     private String cidade;
     private String estado;
     private String telefone;
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 
     // Getters e Setters
     public long getId() {

@@ -31,6 +31,7 @@
         <activity android:name=".PaginaListaVinhosActivity"/>
         <activity android:name=".PaginaListaComprasActivity"/>
         <activity android:name=".FormularioComprasActivity"/>
+        <activity android:name=".FormularioVinhoActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

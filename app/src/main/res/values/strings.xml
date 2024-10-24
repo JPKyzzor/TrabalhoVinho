@@ -34,7 +34,7 @@
     <string name="cadastrar_novo_cliente1">Cadastrar Novo Cliente</string>
     <string name="lista_de_clientes1">Lista de Clientes</string>
     <string name="cadastrar_compra">Cadastrar Compra</string>
-    <string name="valor_total_venda">Valor total da venda</string>
+    <string name="valor_total_venda">Valor total da venda:</string>
     <string name="quantidade_vinhos">Quantidade de vinhos</string>
     <string name="voltar">Voltar</string>
     <string name="selecione_cliente">Selecionar cliente</string>
@@ -70,6 +70,9 @@
     <string name="placeholderCpfCnpjCliente">123.456.789-00</string>
     <string name="placeholderTelefoneCliente">(51)995459125</string>
 
+    //FORMULARIO VINHOS
+    <string name="salvar_vinho">Salvar Vinho</string>
+
     //Itens vinhos
     <string name="placeholderNomeVinho">Exemplo nome de vinho</string>
     <string name="placeholderTipoVinho">Rose</string>
@@ -77,7 +80,10 @@
     <string name="placeholderPrecoVinho">R$1234,00</string>
     <string name="placeholderEstoqueVinho">110</string>
 
-    //Itens vendas
+    //Formulario Compras
+    <string name="placeHolderValorTotal">R$00,00</string>
+
+    //Itens compras
     <string name="placeholderQtdVendidos">12</string>
     <string name="placeholderPrecoTotal">R$12347,00</string>
     <string name="placeholderData">10/10/2024</string>

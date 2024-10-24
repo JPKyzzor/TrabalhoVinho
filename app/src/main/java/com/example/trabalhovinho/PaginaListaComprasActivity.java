@@ -13,8 +13,8 @@ public class PaginaListaComprasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pagina_lista_clientes);
-        botaoCadastro = findViewById(R.id.addClientButton);
+        setContentView(R.layout.activity_pagina_lista_compras);
+        botaoCadastro = findViewById(R.id.addPurchaseButton);
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

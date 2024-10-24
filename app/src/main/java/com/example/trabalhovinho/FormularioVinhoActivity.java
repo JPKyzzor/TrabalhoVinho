@@ -63,6 +63,7 @@ public class FormularioVinhoActivity extends AppCompatActivity {
                 String safra = campoSafra.getText().toString().trim();
                 long idUsuario = preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1);
 
+                //Validações vinho
                 if (nome.isEmpty()) {
                     mostrarAlerta("Erro", "Campo nome não está preenchido", "Ok");
                     return;
@@ -77,17 +78,13 @@ public class FormularioVinhoActivity extends AppCompatActivity {
                 }
                 // Validação da estoque
                 if (estoque.isEmpty()) {
-                    mostrarAlerta("Erro", "Campo cidade não está preenchido", "Ok");
+                    mostrarAlerta("Erro", "Campo estoque não está preenchido", "Ok");
                     return;
                 }
-                if (!estoque.matches("[a-zA-Z\\p{L}\\s]+")) {
-                    mostrarAlerta("Erro", "O estoque não pode conter números ou caracteres especiais", "Ok");
-                    return;
-                }
-                if (estoque.length() > 50) {
+                /*if (esto) {
                     mostrarAlerta("Erro", "O nome da cidade é muito longo", "Ok");
                     return;
-                }
+                }*/
                 // Validação da safra
                 if (safra.isEmpty()) {
                     mostrarAlerta("Erro", "Campo safra não está preenchido", "Ok");

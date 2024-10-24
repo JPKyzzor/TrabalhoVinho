@@ -35,6 +35,11 @@ public class VinhoModel {
     private float preco;
     private int estoque;
 
+    @Override
+    public String toString() {
+        return nome;
+    }
+
     // Getters e Setters
     public long getId() {
         return id;

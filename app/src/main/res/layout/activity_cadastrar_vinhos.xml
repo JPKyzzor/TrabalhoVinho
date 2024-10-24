@@ -38,7 +38,7 @@
         android:autofillHints=""
         android:backgroundTint="@color/novoroxo"
         android:hint="@string/tipo_vinho"
-        android:inputType="number"
+        android:inputType="text"
         android:minHeight="48dp"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo" />
@@ -61,7 +61,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:autofillHints=""
         android:backgroundTint="@color/novoroxo"
         android:hint="@string/preco_vinho"
         android:minHeight="48dp"
@@ -76,7 +75,7 @@
         android:autofillHints=""
         android:backgroundTint="@color/novoroxo"
         android:hint="@string/estoque"
-        android:inputType="phone"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo" />
@@ -85,7 +84,7 @@
         android:id="@+id/saveWineButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/salvar_cliente"
+        android:text="@string/salvar_vinho"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/branco"
         android:layout_marginTop="24dp" />

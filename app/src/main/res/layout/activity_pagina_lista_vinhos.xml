@@ -19,7 +19,7 @@
         android:id="@+id/addWineButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar Novo Vinho"
+        android:text="@string/cadastrar_novo_vinho"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/branco"
         android:layout_marginTop="16dp"

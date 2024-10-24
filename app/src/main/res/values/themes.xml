@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.TrabalhoVinho" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/novoroxo</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="android:navigationBarColor">@color/novoroxo</item>
+        <item name="android:statusBarColor">@color/novoroxo</item>
     </style>
 
     <style name="Theme.TrabalhoVinho" parent="Base.Theme.TrabalhoVinho" />

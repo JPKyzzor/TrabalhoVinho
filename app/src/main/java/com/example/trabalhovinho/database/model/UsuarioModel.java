@@ -7,14 +7,16 @@ public class UsuarioModel {
         COLUNA_ID = "_id",
         COLUNA_NOME = "nome",
         COLUNA_EMAIL = "email",
-        COLUNA_SENHA = "senha";
+        COLUNA_SENHA = "senha",
+        COLUNA_SALT = "salt";
 
     public static final String CREATE_TABLE =
         "CREATE TABLE " + TABLE_NAME + " (" +
         COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
         COLUNA_NOME + " TEXT NOT NULL, " +
         COLUNA_EMAIL + " TEXT NOT NULL UNIQUE, " +
-        COLUNA_SENHA + " TEXT NOT NULL" +
+        COLUNA_SENHA + " TEXT NOT NULL, " +
+        COLUNA_SALT + " TEXT NOT NULL " +
         ");";
 
     public static final String
@@ -24,6 +26,7 @@ public class UsuarioModel {
     private String nome;
     private String email;
     private String senha;
+    private String salt;
 
     // Getters e Setters
     public long getId() {
@@ -56,6 +59,15 @@ public class UsuarioModel {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 }
 

@@ -15,7 +15,8 @@ public class UsuarioDAO extends AbstrataDAO {
             UsuarioModel.COLUNA_ID,
             UsuarioModel.COLUNA_NOME,
             UsuarioModel.COLUNA_EMAIL,
-            UsuarioModel.COLUNA_SENHA
+            UsuarioModel.COLUNA_SENHA,
+            UsuarioModel.COLUNA_SALT
     };
 
     public UsuarioDAO(Context context) {
@@ -30,6 +31,7 @@ public class UsuarioDAO extends AbstrataDAO {
             contentValues.put(UsuarioModel.COLUNA_NOME, usuario.getNome());
             contentValues.put(UsuarioModel.COLUNA_EMAIL, usuario.getEmail());
             contentValues.put(UsuarioModel.COLUNA_SENHA, usuario.getSenha());
+            contentValues.put(UsuarioModel.COLUNA_SALT, usuario.getSalt());
 
             insertRows = db.insert(UsuarioModel.TABLE_NAME, null, contentValues);
         } finally {
@@ -46,6 +48,7 @@ public class UsuarioDAO extends AbstrataDAO {
             contentValues.put(UsuarioModel.COLUNA_NOME, usuario.getNome());
             contentValues.put(UsuarioModel.COLUNA_EMAIL, usuario.getEmail());
             contentValues.put(UsuarioModel.COLUNA_SENHA, usuario.getSenha());
+            contentValues.put(UsuarioModel.COLUNA_SALT, usuario.getSalt());
 
             updateRows = db.update(UsuarioModel.TABLE_NAME, contentValues, UsuarioModel.COLUNA_ID + " = ?", new String[]{String.valueOf(usuario.getId())});
         } finally {
@@ -77,6 +80,7 @@ public class UsuarioDAO extends AbstrataDAO {
                 usuario.setNome(cursor.getString(1));
                 usuario.setEmail(cursor.getString(2));
                 usuario.setSenha(cursor.getString(3));
+                usuario.setSalt(cursor.getString(4));
                 listaUsuario.add(usuario);
                 cursor.moveToNext(); // Move para o próximo item
             }
@@ -100,6 +104,7 @@ public class UsuarioDAO extends AbstrataDAO {
                 usuario.setNome(cursor.getString(1));
                 usuario.setEmail(cursor.getString(2));
                 usuario.setSenha(cursor.getString(3));
+                usuario.setSalt(cursor.getString(4));
             }
             if (cursor != null) {
                 cursor.close();
@@ -108,5 +113,20 @@ public class UsuarioDAO extends AbstrataDAO {
             Close();
         }
         return usuario;
+    }
+
+    public boolean checkIfEmailExists(String email) {
+        boolean existe = false;
+        try {
+            Open();
+            Cursor cursor = db.query(UsuarioModel.TABLE_NAME, colunas, UsuarioModel.COLUNA_EMAIL + " = ?", new String[]{email}, null, null, null);
+            if (!cursor.moveToFirst()) {
+                existe = true;
+            }
+            cursor.close();
+            return existe;
+        } finally {
+            Close();
+        }
     }
 }

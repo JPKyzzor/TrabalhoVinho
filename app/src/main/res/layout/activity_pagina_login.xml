@@ -47,6 +47,13 @@
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo"
         android:textStyle="bold" />
+    <CheckBox
+        android:id="@+id/checkLembrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Lembrar meus dados"
+        android:textColor="@color/novoroxo"/>
 
     <!-- botão de login -->
     <Button
@@ -62,7 +69,7 @@
 
     <!-- botão para criar uma conta -->
     <Button
-        android:id="@+id/createAccountTextView"
+        android:id="@+id/createAccountButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Criar uma conta"

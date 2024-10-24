@@ -4,6 +4,7 @@
         <item name="colorOnPrimary">@color/branco</item>
         <item name="android:navigationBarColor">@color/novoroxo</item>
         <item name="android:statusBarColor">@color/novoroxo</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
     </style>
 
     <style name="Theme.TrabalhoVinho" parent="Base.Theme.TrabalhoVinho" />

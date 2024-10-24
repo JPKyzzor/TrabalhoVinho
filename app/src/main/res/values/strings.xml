@@ -39,6 +39,13 @@
     <string name="voltar">Voltar</string>
     <string name="selecione_cliente">Selecionar cliente</string>
     <string name="selecione_vinho">Selecionar vinho</string>
+    <string name="cadastrar_vinho">Cadastrar Vinho</string>
+    <string name="nome_vinho">Nome do Vinho</string>
+    <string name="tipo_vinho">Tipo de Vinho</string>
+    <string name="safra_vinho">Safra do Vinho</string>
+    <string name="preco_vinho">Preço do Vinho</string>
+    <string name="estoque">Estoque</string>
+    <string name="salva_vinho">Salvar Vinho</string>
 
     //UTILITARIOS
     <string name="ok">Ok</string>

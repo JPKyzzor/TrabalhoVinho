@@ -25,11 +25,20 @@
             android:id="@+id/addPurchaseButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastrar Nova Compra"
+            android:text="@string/cadastrar_nova_compra"
             android:backgroundTint="@color/novoroxo"
             android:textColor="@color/branco"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"/>
+     <TextView
+         android:id="@+id/semComprasMensagem"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/sem_compras"
+         android:visibility="gone"
+         android:layout_gravity="center"
+         android:textSize="16sp"
+         android:textColor="@color/novoroxo"/>
 
         <ListView
             android:id="@+id/purchaseListView"
@@ -37,6 +46,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:divider="@color/novoroxo"
-            android:dividerHeight="1dp" />
+            android:dividerHeight="1dp"
+            android:visibility="gone"/>
 
     </LinearLayout>

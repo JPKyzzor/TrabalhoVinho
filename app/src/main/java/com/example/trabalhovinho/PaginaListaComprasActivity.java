@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.trabalhovinho.Shared.SharedKeys;
+import com.example.trabalhovinho.Shared.UsefulFunctions;
 import com.example.trabalhovinho.adapter.ClienteAdapter;
 import com.example.trabalhovinho.adapter.CompraAdapter;
 import com.example.trabalhovinho.database.dao.ClienteDAO;
@@ -40,8 +41,7 @@ public class PaginaListaComprasActivity extends AppCompatActivity {
         setinha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(PaginaListaComprasActivity.this, PaginaMenuActivity.class);
-                startActivity(it);
+                UsefulFunctions.finalizaIntent(PaginaListaComprasActivity.this);
             }
         });
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
@@ -64,11 +64,17 @@ public class PaginaListaComprasActivity extends AppCompatActivity {
         carregarDados();
     }
 
-    private void carregarDados(){
+    private void carregarDados() {
         compraDAO = new CompraDAO(this);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PaginaListaComprasActivity.this);
         ArrayList<CompraModel> lista = compraDAO.selectAll(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1));
-        Log.d("ListaCompras", "Tamanho da lista: " + lista.size());
-        listViewCompras.setAdapter(new CompraAdapter(PaginaListaComprasActivity.this,lista));
+        if (lista.isEmpty()) {
+            findViewById(R.id.purchaseListView).setVisibility(View.GONE);
+            findViewById(R.id.semComprasMensagem).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.purchaseListView).setVisibility(View.VISIBLE);
+            findViewById(R.id.semComprasMensagem).setVisibility(View.GONE);
+            listViewCompras.setAdapter(new CompraAdapter(PaginaListaComprasActivity.this, lista));
+        }
     }
 }

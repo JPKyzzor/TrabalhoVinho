@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.trabalhovinho.Shared.SharedKeys;
+import com.example.trabalhovinho.Shared.UsefulFunctions;
 import com.example.trabalhovinho.adapter.CompraAdapter;
 import com.example.trabalhovinho.adapter.VinhoAdapter;
 import com.example.trabalhovinho.database.dao.VinhoDAO;
@@ -38,8 +39,7 @@ public class PaginaListaVinhosActivity extends AppCompatActivity {
         setinha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(PaginaListaVinhosActivity.this, PaginaMenuActivity.class);
-                startActivity(it);
+                UsefulFunctions.finalizaIntent(PaginaListaVinhosActivity.this);
             }
         });
 
@@ -54,8 +54,15 @@ public class PaginaListaVinhosActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+    }
 
-        //listagem
+    @Override
+    protected void onResume() {
+        super.onResume();
+        carregarDados();
+    }
+
+    private void carregarDados(){
         vinhoDAO = new VinhoDAO(this);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PaginaListaVinhosActivity.this);
         ArrayList<VinhoModel> lista = vinhoDAO.selectAll(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1));

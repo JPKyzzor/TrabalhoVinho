@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.trabalhovinho.Shared.SharedKeys;
+import com.example.trabalhovinho.Shared.UsefulFunctions;
 import com.example.trabalhovinho.adapter.ClienteAdapter;
 import com.example.trabalhovinho.database.dao.ClienteDAO;
 import com.example.trabalhovinho.database.model.ClienteModel;
@@ -31,12 +32,10 @@ public class PaginaListaClientesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pagina_lista_clientes);
         botaoCadastro = findViewById(R.id.addClientButton);
         setinha = findViewById(R.id.setinha);
-
         setinha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(PaginaListaClientesActivity.this, PaginaMenuActivity.class);
-                startActivity(it);
+                UsefulFunctions.finalizaIntent(PaginaListaClientesActivity.this);
             }
         });
         listViewClientes = findViewById(R.id.clientListView);

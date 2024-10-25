@@ -83,6 +83,10 @@
     <string name="placeholderPrecoVinho">R$1234,00</string>
     <string name="placeholderEstoqueVinho">110</string>
 
+    //Lista compras
+    <string name="cadastrar_nova_compra">Cadastrar Nova Compra</string>
+    <string name="sem_compras">Não há compras cadastradas</string>
+
     //Formulario Compras
     <string name="placeHolderValorTotal">R$00,00</string>
     <string name="data_venda">Data da venda</string>

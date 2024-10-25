@@ -22,6 +22,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.trabalhovinho.Shared.SharedKeys;
+import com.example.trabalhovinho.Shared.UsefulFunctions;
 import com.example.trabalhovinho.adapter.ClienteSelectAdapter;
 import com.example.trabalhovinho.adapter.VinhoSelectAdapter;
 import com.example.trabalhovinho.database.dao.ClienteDAO;
@@ -248,9 +249,7 @@ public class FormularioComprasActivity extends AppCompatActivity {
     }
 
     private void redirecionarParaLista() {
-        Intent returnIntent = new Intent();
-        setResult(RESULT_OK, returnIntent);
-        finish();
+        UsefulFunctions.finalizaIntent(this);
     }
 
     private void mostrarAlerta(String titulo, String mensagem, String botaoOK) {

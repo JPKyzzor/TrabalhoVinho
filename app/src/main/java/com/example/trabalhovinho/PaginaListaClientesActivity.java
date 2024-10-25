@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -23,11 +24,21 @@ public class PaginaListaClientesActivity extends AppCompatActivity {
     private Button botaoCadastro;
     private ListView listViewClientes;
     private ClienteDAO clienteDAO;
+    private ImageView setinha;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_lista_clientes);
         botaoCadastro = findViewById(R.id.addClientButton);
+        setinha = findViewById(R.id.setinha);
+
+        setinha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(PaginaListaClientesActivity.this, PaginaMenuActivity.class);
+                startActivity(it);
+            }
+        });
         listViewClientes = findViewById(R.id.clientListView);
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
             @Override

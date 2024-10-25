@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/clientes"
                 android:textColor="@color/novoroxo"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- vinhos -->
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/vinhos"
                 android:textColor="@color/novoroxo"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/compras"
                 android:textColor="@color/novoroxo"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- relatório de cliente -->
@@ -148,9 +148,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/relat_rio_por_cliente"
+                android:text="@string/relatorio_por_cliente"
                 android:textColor="@color/novoroxo"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -188,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/relat_rio_por_m_s"
                 android:textColor="@color/novoroxo"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- logout -->
@@ -215,7 +215,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/logout"
                 android:textColor="@color/novoroxo"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 

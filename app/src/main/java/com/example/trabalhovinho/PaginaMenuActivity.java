@@ -25,6 +25,8 @@ public class PaginaMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_menu);
         botaoClientes = findViewById(R.id.botaoClientes);
+        botaoRelatorioCliente = findViewById(R.id.botaoRelatorioCliente);
+        botaoRelatorioMes = findViewById(R.id.botaoRelatorioMes);
         botaoVinhos = findViewById(R.id.botaoVinhos);
         botaoCompras = findViewById(R.id.botaoCompras);
         botaoLogout = findViewById(R.id.botaoLogout);
@@ -51,6 +53,20 @@ public class PaginaMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(PaginaMenuActivity.this, PaginaListaComprasActivity.class);
+                startActivity(it);
+            }
+        });
+        botaoRelatorioMes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(PaginaMenuActivity.this, RelatorioVendasMesActivity.class);
+                startActivity(it);
+            }
+        });
+        botaoRelatorioCliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(PaginaMenuActivity.this, RelatorioVendasClienteActivity.class);
                 startActivity(it);
             }
         });

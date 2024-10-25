@@ -24,6 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FormularioUsuarioActivity"/>
+        <activity android:name=".RelatorioVendasClienteActivity"/>
+        <activity android:name=".RelatorioVendasMesActivity"/>
         <activity android:name=".PaginaEsqueceuSenhaActivity"/>
         <activity android:name=".PaginaMenuActivity"/>
         <activity android:name=".PaginaListaClientesActivity"/>

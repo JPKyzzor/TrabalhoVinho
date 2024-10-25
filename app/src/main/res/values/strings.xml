@@ -4,7 +4,7 @@
     <string name="Logout">botao de logout</string>
     <string name="compras">Compras</string>
     <string name="relat_rio_por_m_s">Relatório por Mês</string>
-    <string name="relat_rio_por_cliente">Relatório por Cliente</string>
+    <string name="relatorio_por_cliente">Relatório por Cliente</string>
     <string name="vinhos">Vinhos</string>
     <string name="clientes">Clientes</string>
     <string name="menu">Menu</string>
@@ -46,6 +46,9 @@
     <string name="preco_vinho">Preço do Vinho</string>
     <string name="estoque">Estoque</string>
     <string name="salva_vinho">Salvar Vinho</string>
+    <string name="relatorio_mes">Relatórios por Mês</string>
+    <string name="mes">Mês</string>
+    <string name="ano">Ano</string>
 
     //UTILITARIOS
     <string name="ok">Ok</string>

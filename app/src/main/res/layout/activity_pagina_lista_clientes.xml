@@ -6,14 +6,22 @@
     android:padding="16dp"
     android:background="@color/amarelo">
 
+    <ImageView
+        android:id="@+id/setinha"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="start"
+        android:src="@drawable/iconesetinha" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lista_de_clientes1"
-        android:textSize="24sp"
-        android:textColor="@color/novoroxo"
         android:layout_gravity="center"
+        android:text="@string/lista_de_clientes1"
+        android:textColor="@color/novoroxo"
+        android:textSize="24sp"
         android:textStyle="bold" />
+
     <Button
         android:id="@+id/addClientButton"
         android:layout_width="match_parent"

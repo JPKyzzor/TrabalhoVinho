@@ -19,6 +19,9 @@ import com.example.trabalhovinho.database.dao.VinhoDAO;
 import com.example.trabalhovinho.database.model.ClienteModel;
 import com.example.trabalhovinho.database.model.VinhoModel;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 public class FormularioVinhoActivity extends AppCompatActivity {
     private EditText campoNome, campoTipo, campoSafra, campoEstoque, campoPreco;
     private Button botaoCadastrar, botaoCancelar;
@@ -42,8 +45,8 @@ public class FormularioVinhoActivity extends AppCompatActivity {
         if (idVinhoEdicao != -1) {
             VinhoModel vinhoEdit = vinhoDAO.selectById(idVinhoEdicao);
             campoNome.setText(vinhoEdit.getNome());
-            campoEstoque.setText(vinhoEdit.getEstoque());
-            campoPreco.setText(String.valueOf(vinhoEdit.getPreco()));
+            campoEstoque.setText(String.valueOf(vinhoEdit.getEstoque()));
+            campoPreco.setText(String.format(Locale.US, "%.2f", vinhoEdit.getPreco()));
             campoSafra.setText(vinhoEdit.getSafra());
             campoTipo.setText(vinhoEdit.getTipo());
         }
@@ -76,36 +79,66 @@ public class FormularioVinhoActivity extends AppCompatActivity {
                     mostrarAlerta("Erro", "O nome é muito longo", "Ok");
                     return;
                 }
-                // Validação da estoque
+                //Validação estoque
                 if (estoque.isEmpty()) {
                     mostrarAlerta("Erro", "Campo estoque não está preenchido", "Ok");
                     return;
                 }
-                /*if (esto) {
-                    mostrarAlerta("Erro", "O nome da cidade é muito longo", "Ok");
+                if (!estoque.matches("\\d+")) {
+                    mostrarAlerta("Erro", "O campo estoque só pode possuir números inteiros", "Ok");
                     return;
-                }*/
+                }
+                try {
+                     int valorEstoque = Integer.parseInt(estoque);
+                    if (valorEstoque < 0) {
+                        mostrarAlerta("Erro", "O campo estoque deve ser maior ou igual a zero", "Ok");
+                        return;
+                    }
+                } catch (NumberFormatException e) {
+                    mostrarAlerta("Erro", "Valor inválido no campo estoque", "Ok");
+                    return;
+                }
                 // Validação da safra
                 if (safra.isEmpty()) {
                     mostrarAlerta("Erro", "Campo safra não está preenchido", "Ok");
                     return;
                 }
-                if (!safra.matches("[a-zA-Z\\p{L}\\s]+")) {
-                    mostrarAlerta("Erro", "O safra não pode conter números ou caracteres especiais", "Ok");
+                if (!safra.matches("\\d{4}")) {
+                    mostrarAlerta("Erro", "O campo safra deve conter um ano válido com 4 números", "Ok");
                     return;
                 }
-                if (safra.length() > 50) {
-                    mostrarAlerta("Erro", "O nome da safra é muito longo", "Ok");
+                int anoSafra = Integer.parseInt(safra);
+                int anoAtual = Calendar.getInstance().get(Calendar.YEAR);
+                if (anoSafra < 1900 || anoSafra > anoAtual) {
+                    mostrarAlerta("Erro", "A safra deve ser um ano entre 1900 e o ano atual", "Ok");
                     return;
                 }
                 // Validação do preco
                 if (preco.isEmpty()) {
-                    mostrarAlerta("Erro", "Campo de preço não esta preenchido", "Ok");
+                    mostrarAlerta("Erro", "Campo de preço não está preenchido", "Ok");
+                    return;
+                }
+                if (!preco.matches("\\d+(\\.\\d{1,2})?|\\d+(,\\d{1,2})?")) {
+                    mostrarAlerta("Erro", "O campo de preço deve conter um número válido, com até 2 casas decimais", "Ok");
+                    return;
+                }
+                float valorPreco = Float.parseFloat(preco.replace(",", "."));
+                if (valorPreco <= 0) {
+                    mostrarAlerta("Erro", "O preço deve ser maior que zero", "Ok");
                     return;
                 }
                 // Validação do tipo
                 if(tipo.isEmpty()){
-                    mostrarAlerta("Erro", "O tipo do vinho não foi selecionado", "Ok");
+                    mostrarAlerta("Erro", "O tipo do vinho não foi digitado", "Ok");
+                    return;
+                }
+                if (tipo.length() > 20) {
+                    mostrarAlerta("Erro", "O tipo de vinho é muito longo", "Ok");
+                    return;
+                }
+                if (!tipo.matches("[a-zA-Z\\p{L}\\s]+")) {
+                    mostrarAlerta("Erro", "O tipo de vinho não pode conter números ou caracteres especiais", "Ok");
+                    return;
                 }
                 VinhoModel vinho = new VinhoModel();
                 if (idVinhoEdicao != -1) {
@@ -156,7 +189,8 @@ private void mostrarAlerta2(String titulo, String mensagem, String botaoOK) {
             .show();
 }
     private void redirecionarParaLista() {
-        Intent it = new Intent(FormularioVinhoActivity.this, PaginaListaVinhosActivity.class);
-        startActivity(it);
+        Intent returnIntent = new Intent();
+        setResult(RESULT_OK, returnIntent);
+        finish();
     }
 }

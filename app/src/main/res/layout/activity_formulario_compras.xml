@@ -40,6 +40,19 @@
         android:textColor="@color/novoroxo"
         android:textColorHint="@color/novoroxo" />
 
+    <EditText
+        android:id="@+id/dataVendaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/novoroxo"
+        android:hint="@string/data_venda"
+        android:inputType="none"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/novoroxo"
+        android:textColorHint="@color/novoroxo" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,11 +84,10 @@
         android:text="@string/cadastrar_compra"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/branco"
-        android:layout_marginTop="24dp"
-        android:enabled="false" />
+        android:layout_marginTop="24dp" />
 
     <Button
-        android:id="@+id/voltarButton"
+        android:id="@+id/cancelarCompraButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/voltar"

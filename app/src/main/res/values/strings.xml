@@ -82,6 +82,7 @@
 
     //Formulario Compras
     <string name="placeHolderValorTotal">R$00,00</string>
+    <string name="data_venda">Data da venda</string>
 
     //Itens compras
     <string name="placeholderQtdVendidos">12</string>

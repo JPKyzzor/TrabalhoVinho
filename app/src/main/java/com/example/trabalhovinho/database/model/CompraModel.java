@@ -10,7 +10,8 @@ public class CompraModel {
             COLUNA_ID_VINHO = "id_vinho",
             COLUNA_DATA = "data",
             COLUNA_QTD_VINHOS = "qtd_vinhos",
-            COLUNA_PRECO_TOTAL = "preco_total";
+            COLUNA_PRECO_TOTAL = "preco_total",
+            TRIGGER_ESTOQUE = "trigger_estoque";
 
     public static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + " (" +
@@ -25,6 +26,35 @@ public class CompraModel {
             "FOREIGN KEY (" + COLUNA_ID_CLIENTE + ") REFERENCES tb_clientes(_id), " +
             "FOREIGN KEY (" + COLUNA_ID_VINHO + ") REFERENCES tb_vinhos(_id)" +
             ");";
+
+    public static final String CREATE_TRIGGER_ATUALIZAR_ESTOQUE_INSERT =
+            "CREATE TRIGGER IF NOT EXISTS trigger_estoque_insert " +
+                    "AFTER INSERT ON " + TABLE_NAME + " " +
+                    "BEGIN " +
+                    "   UPDATE " + VinhoModel.TABLE_NAME + " " +
+                    "   SET " + VinhoModel.COLUNA_ESTOQUE + " = " +
+                    "   CASE WHEN (" + VinhoModel.COLUNA_ESTOQUE + " - NEW." + COLUNA_QTD_VINHOS + ") < 0 THEN 0 " +
+                    "        ELSE " + VinhoModel.COLUNA_ESTOQUE + " - NEW." + COLUNA_QTD_VINHOS + " END " +
+                    "   WHERE _id = NEW." + COLUNA_ID_VINHO + ";" +
+                    "END;";
+
+    public static final String CREATE_TRIGGER_ATUALIZAR_ESTOQUE_UPDATE =
+            "CREATE TRIGGER IF NOT EXISTS trigger_estoque_update " +
+                    "AFTER UPDATE ON " + TABLE_NAME + " " +
+                    "BEGIN " +
+                    "   UPDATE " + VinhoModel.TABLE_NAME + " " +
+                    "   SET " + VinhoModel.COLUNA_ESTOQUE + " = " + VinhoModel.COLUNA_ESTOQUE + " + OLD." + COLUNA_QTD_VINHOS + " " +
+                    "   WHERE _id = OLD." + COLUNA_ID_VINHO + ";" +
+                    "   " +
+                    "   UPDATE " + VinhoModel.TABLE_NAME + " " +
+                    "   SET " + VinhoModel.COLUNA_ESTOQUE + " = " +
+                    "   CASE WHEN (" + VinhoModel.COLUNA_ESTOQUE + " - NEW." + COLUNA_QTD_VINHOS + ") < 0 THEN 0 " +
+                    "        ELSE " + VinhoModel.COLUNA_ESTOQUE + " - NEW." + COLUNA_QTD_VINHOS + " END " +
+                    "   WHERE _id = NEW." + COLUNA_ID_VINHO + ";" +
+                    "END;";
+
+
+
 
     public static final String
             DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME + ";";

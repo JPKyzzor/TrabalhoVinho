@@ -159,8 +159,9 @@ public class FormularioClienteActivity extends AppCompatActivity {
     }
 
     private void redirecionarParaLista() {
-        Intent it = new Intent(FormularioClienteActivity.this, PaginaListaClientesActivity.class);
-        startActivity(it);
+        Intent returnIntent = new Intent();
+        setResult(RESULT_OK, returnIntent);
+        finish();
     }
 
     private void mostrarAlerta(String titulo, String mensagem, String botaoOK) {

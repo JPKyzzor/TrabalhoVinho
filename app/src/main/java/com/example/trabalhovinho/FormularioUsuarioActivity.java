@@ -111,8 +111,9 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
     }
 
     private void redirecionarParaLogin(){
-        Intent it = new Intent(FormularioUsuarioActivity.this, PaginaLoginActivity.class);
-        startActivity(it);
+        Intent returnIntent = new Intent();
+        setResult(RESULT_OK, returnIntent);
+        finish();
     }
 
 

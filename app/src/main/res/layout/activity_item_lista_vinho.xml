@@ -24,28 +24,8 @@
                 android:text="@string/placeholderNomeVinho"
                 android:layout_weight="3"
                 android:textSize="16sp"
+                android:textColor="@color/novoroxo"
                 />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/precoVinho"
-                android:text="@string/placeholderPrecoVinho"
-                android:layout_weight="3"
-                android:textSize="16sp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="9">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/safraVinho"
-                android:text="@string/placeholderSafraVinho"
-                android:layout_weight="3"
-                android:textSize="16sp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,15 +33,39 @@
                 android:text="@string/placeholderTipoVinho"
                 android:layout_weight="3"
                 android:textSize="16sp"
+                android:textColor="@color/novoroxo"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/safraVinho"
+                android:text="@string/placeholderSafraVinho"
+                android:layout_weight="3"
+                android:textColor="@color/novoroxo"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/precoVinho"
+                android:text="@string/placeholderPrecoVinho"
+                android:layout_weight="3"
+                android:textSize="16sp"
+                android:textColor="@color/saldoPositivo"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/estoqueVinho"
                 android:text="@string/placeholderEstoqueVinho"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:textSize="16sp"
-                android:textColor="@color/novoroxo"
+                android:textColor="@color/saldoNegativo"
                 android:textStyle="bold"
                 />
         </LinearLayout>

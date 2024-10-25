@@ -11,7 +11,7 @@ import com.example.trabalhovinho.database.model.VinhoModel;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "trabalhovinhos.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public DBOpenHelper(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -27,6 +27,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        if (oldVersion < 2) {
+            db.execSQL(CompraModel.CREATE_TRIGGER_ATUALIZAR_ESTOQUE_INSERT);
+            db.execSQL(CompraModel.CREATE_TRIGGER_ATUALIZAR_ESTOQUE_UPDATE);
+        }
     }
 }

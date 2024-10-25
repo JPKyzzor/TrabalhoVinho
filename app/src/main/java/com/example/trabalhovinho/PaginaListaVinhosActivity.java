@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class PaginaListaVinhosActivity extends AppCompatActivity {
     private ListView listViewVinhos;
     private Button botaoCadastro;
     private VinhoDAO vinhoDAO;
+    private ImageView setinha;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,6 +33,15 @@ public class PaginaListaVinhosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pagina_lista_vinhos);
         botaoCadastro = findViewById(R.id.addWineButton);
         listViewVinhos = findViewById(R.id.wineListView);
+        setinha = findViewById(R.id.setinha);
+
+        setinha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(PaginaListaVinhosActivity.this, PaginaMenuActivity.class);
+                startActivity(it);
+            }
+        });
 
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
             @Override

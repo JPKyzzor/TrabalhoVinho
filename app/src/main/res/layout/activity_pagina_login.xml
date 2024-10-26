@@ -60,7 +60,7 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entrar"
+        android:text="@string/entrar"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/branco"
         android:layout_marginTop="24dp"
@@ -72,7 +72,7 @@
         android:id="@+id/createAccountButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Criar uma conta"
+        android:text="@string/criar_uma_conta"
         android:background="@drawable/button_background"
         android:textColor="@color/novoroxo"
         android:layout_marginTop="24dp"
@@ -89,7 +89,7 @@
         android:clickable="true"
         android:focusable="true"
         android:minHeight="48dp"
-        android:text="Esqueceu a senha?"
+        android:text="@string/esqueceu_a_senha"
         android:textColor="@color/novoroxo"
         android:textStyle="bold" />
 

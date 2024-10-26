@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/novoroxo"
-        android:contentDescription="Formato: Nome do Vinho - Safra do Vinho - Preço Unitário"
+        android:contentDescription="@string/formato_nome_do_vinho_safra_do_vinho_pre_o_unit_rio"
         android:minHeight="48dp"
         android:prompt="@string/selecione_vinho"
         android:spinnerMode="dropdown" />

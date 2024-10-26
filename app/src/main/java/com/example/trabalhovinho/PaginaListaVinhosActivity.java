@@ -62,11 +62,18 @@ public class PaginaListaVinhosActivity extends AppCompatActivity {
         carregarDados();
     }
 
-    private void carregarDados(){
+    private void carregarDados() {
         vinhoDAO = new VinhoDAO(this);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PaginaListaVinhosActivity.this);
         ArrayList<VinhoModel> lista = vinhoDAO.selectAll(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1));
-        Log.d("Listavinhos", "Tamanho da lista: " + lista.size());
-        listViewVinhos.setAdapter(new VinhoAdapter(PaginaListaVinhosActivity.this,lista));
+
+        if (lista.isEmpty()) {
+            findViewById(R.id.wineListView).setVisibility(View.GONE);
+            findViewById(R.id.semVinhosMensagem).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.wineListView).setVisibility(View.VISIBLE);
+            findViewById(R.id.semVinhosMensagem).setVisibility(View.GONE);
+            listViewVinhos.setAdapter(new VinhoAdapter(PaginaListaVinhosActivity.this, lista));
+        }
     }
 }

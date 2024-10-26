@@ -55,12 +55,19 @@ public class PaginaListaClientesActivity extends AppCompatActivity {
         carregarDados();
     }
 
-    private void carregarDados(){
+    private void carregarDados() {
         clienteDAO = new ClienteDAO(this);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PaginaListaClientesActivity.this);
         ArrayList<ClienteModel> lista = clienteDAO.selectAll(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1));
-        Log.d("ListaClientes", "Tamanho da lista: " + lista.size());
-        listViewClientes.setAdapter(new ClienteAdapter(PaginaListaClientesActivity.this,lista));
+
+        if (lista.isEmpty()) {
+            findViewById(R.id.clientListView).setVisibility(View.GONE);
+            findViewById(R.id.semClientesMensagem).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.clientListView).setVisibility(View.VISIBLE);
+            findViewById(R.id.semClientesMensagem).setVisibility(View.GONE);
+            listViewClientes.setAdapter(new ClienteAdapter(PaginaListaClientesActivity.this, lista));
+        }
     }
 
 }

@@ -72,9 +72,11 @@
     <string name="placeholderEnderecoCliente">Criciúma/SC</string>
     <string name="placeholderCpfCnpjCliente">123.456.789-00</string>
     <string name="placeholderTelefoneCliente">(51)995459125</string>
+    <string name="sem_clientes">Não há clientes cadastrados</string>
 
     //FORMULARIO VINHOS
     <string name="salvar_vinho">Salvar Vinho</string>
+    <string name="sem_vinhos">Não há vinhos cadastrados</string>
 
     //Itens vinhos
     <string name="placeholderNomeVinho">Exemplo nome de vinho</string>
@@ -96,4 +98,21 @@
     <string name="placeholderPrecoTotal">R$12347,00</string>
     <string name="placeholderData">10/10/2024</string>
     <string name="cadastrar_novo_vinho">Cadastrar Novo Vinho</string>
+    <string name="formato_nome_do_vinho_safra_do_vinho_pre_o_unit_rio">Formato: Nome do Vinho - Safra do Vinho - Preço Unitário</string>
+    <string name="esqueceu_sua_senha">Esqueceu sua senha?</string>
+    <string name="logo_do_aplicativo1">Logo do aplicativo</string>
+    <string name="entre_em_contato_com_a_pessoa_respons_vel_que_vai_ajudar_na_assist_ncia_da_troca_de_senha">Entre em contato com a pessoa responsável que vai ajudar na assistência da troca de senha</string>
+    <string name="jo_o_da_silva">João da Silva</string>
+    <string name="_55_9_9911_9911">(55) 9 9911.9911</string>
+    <string name="voltar1">Voltar</string>
+    <string name="lista_de_compras">Lista de Compras</string>
+    <string name="lista_de_vinhos">Lista de Vinhos</string>
+    <string name="entrar">Entrar</string>
+    <string name="criar_uma_conta">Criar uma conta</string>
+    <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="editar">Editar</string>
+    <string name="telefone2">Telefone</string>
+    <string name="endere_o1">Endereço</string>
+    <string name="cpf_cnpj">CPF/CNPJ</string>
+    <string name="nome_do_cliente1">Nome do Cliente</string>
 </resources>

@@ -13,14 +13,14 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
         android:src="@drawable/mdsvinhoemhd"
-        android:contentDescription="Logo do aplicativo" />
+        android:contentDescription="@string/logo_do_aplicativo1" />
 
     <!-- Título Esqueceu sua senha -->
     <TextView
         android:id="@+id/forgotPasswordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Esqueceu sua senha?"
+        android:text="@string/esqueceu_sua_senha"
         android:textSize="20sp"
         android:textColor="@color/novoroxo"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
         android:id="@+id/forgotPasswordDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entre em contato com a pessoa responsável que vai ajudar na assistência da troca de senha"
+        android:text="@string/entre_em_contato_com_a_pessoa_respons_vel_que_vai_ajudar_na_assist_ncia_da_troca_de_senha"
         android:textColor="@color/novoroxo"
         android:layout_marginTop="8dp"
         android:textAlignment="center" />
@@ -62,7 +62,7 @@
                 android:id="@+id/contactName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="João da Silva"
+                android:text="@string/jo_o_da_silva"
                 android:textColor="@color/novoroxo"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -71,7 +71,7 @@
                 android:id="@+id/contactPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(55) 9 9911.9911"
+                android:text="@string/_55_9_9911_9911"
                 android:textColor="@color/novoroxo"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -82,7 +82,7 @@
         android:id="@+id/backButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Voltar"
+        android:text="@string/voltar1"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/branco"
         android:layout_marginTop="24dp" />

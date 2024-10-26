@@ -9,7 +9,7 @@
         android:id="@+id/clientNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome do Cliente"
+        android:text="@string/nome_do_cliente1"
         android:textSize="18sp"
         android:textColor="@color/novoroxo"
         android:textStyle="bold" />
@@ -18,28 +18,28 @@
         android:id="@+id/clientCpfCnpjTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CPF/CNPJ"
+        android:text="@string/cpf_cnpj"
         android:textColor="@color/novoroxo" />
 
     <TextView
         android:id="@+id/clientAddressTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Endereço"
+        android:text="@string/endere_o1"
         android:textColor="@color/novoroxo" />
 
     <TextView
         android:id="@+id/clientPhoneTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Telefone"
+        android:text="@string/telefone2"
         android:textColor="@color/novoroxo" />
 
     <Button
         android:id="@+id/editClientButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar"
+        android:text="@string/editar"
         android:backgroundTint="@color/novoroxo"
         android:textColor="@color/branco"
         android:layout_gravity="end"

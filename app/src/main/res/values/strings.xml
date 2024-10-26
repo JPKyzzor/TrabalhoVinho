@@ -51,6 +51,9 @@
     <string name="ano">Ano</string>
     <string name="Total">Total: </string>
     <string name="valorTotal"> </string>
+    <string name="total_comprado">Quantidade Total Comprada:</string>
+    <string name="valor_total_gasto">Valor Total Gasto: </string>
+    <string name="total_quantidade">Quantidade: </string>
 
     //UTILITARIOS
     <string name="ok">Ok</string>

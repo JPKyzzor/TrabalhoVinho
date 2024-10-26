@@ -161,36 +161,6 @@ public class CompraDAO extends AbstrataDAO {
         return new Pair<>(listaCompra, valorTotal);
     }
 
-
-    public ArrayList<CompraModel> selectAllByMes(long id_usuario, int mes, int ano) {
-        ArrayList<CompraModel> listaCompra = new ArrayList<>();
-        try {
-            Open();
-            String filtroData = ano + "-" + String.format("%02d", mes) + "%";
-            Cursor cursor = db.query(CompraModel.TABLE_NAME, colunas,
-                    CompraModel.COLUNA_ID_USUARIO + " = ? AND " + CompraModel.COLUNA_DATA + " LIKE ?",
-                    new String[]{String.valueOf(id_usuario), filtroData}, null, null, null);
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                CompraModel compra = new CompraModel();
-                compra.setId(cursor.getLong(0));
-                compra.setId_usuario(cursor.getLong(1));
-                compra.setId_cliente(cursor.getLong(2));
-                compra.setId_vinho(cursor.getLong(3));
-                compra.setData(cursor.getString(4));
-                compra.setQtd_vinhos(cursor.getInt(5));
-                listaCompra.add(compra);
-                cursor.moveToNext();
-            }
-            cursor.close();
-        } finally {
-            Close();
-        }
-
-        return listaCompra;
-    }
-
-
     public CompraModel selectById(long id) {
         CompraModel compra = null;
         try {
@@ -213,4 +183,39 @@ public class CompraDAO extends AbstrataDAO {
         }
         return compra;
     }
+
+    public Pair<ArrayList<CompraModel>, Pair<Integer, Float>> selectRelatorioPorCliente(long id_cliente) {
+        ArrayList<CompraModel> listaCompra = new ArrayList<>();
+        int quantidadeTotalComprada = 0;
+        float valorTotalGasto = 0;
+
+        try {
+            Open();
+            Cursor cursor = db.query(CompraModel.TABLE_NAME, colunas, CompraModel.COLUNA_ID_CLIENTE + " = ?",
+                    new String[]{String.valueOf(id_cliente)}, null, null, null);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                CompraModel compra = new CompraModel();
+                compra.setId(cursor.getLong(0));
+                compra.setId_usuario(cursor.getLong(1));
+                compra.setId_cliente(cursor.getLong(2));
+                compra.setId_vinho(cursor.getLong(3));
+                compra.setData(cursor.getString(4));
+                compra.setQtd_vinhos(cursor.getInt(5));
+                compra.setPreco_total(cursor.getFloat(6));
+
+                listaCompra.add(compra);
+                quantidadeTotalComprada += compra.getQtd_vinhos();
+                valorTotalGasto += compra.getPreco_total();
+
+                cursor.moveToNext();
+            }
+            cursor.close();
+        } finally {
+            Close();
+        }
+
+        return new Pair<>(listaCompra, new Pair<>(quantidadeTotalComprada, valorTotalGasto));
+    }
+
 }

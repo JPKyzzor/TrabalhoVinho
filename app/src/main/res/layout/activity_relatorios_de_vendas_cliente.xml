@@ -13,6 +13,7 @@
         android:layout_height="40dp"
         android:layout_gravity="start"
         android:src="@drawable/iconesetinha" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,30 +26,74 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
-
-    <Spinner
-        android:id="@+id/selectCliente"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/novoroxo"
-        android:minHeight="48dp"
-        android:prompt="@string/clientes"
-        android:spinnerMode="dropdown" />
-
+        <Spinner
+            android:id="@+id/selectCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/novoroxo"
+            android:minHeight="48dp"
+            android:prompt="@string/clientes"
+            android:spinnerMode="dropdown" />
     </LinearLayout>
 
     <ListView
-        android:layout_marginTop="10dp"
         android:id="@+id/purchaseListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginTop="10dp"
         android:divider="@color/novoroxo"
         android:dividerHeight="1dp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/novoroxo" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_quantidade"
+            android:textColor="@color/novoroxo"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/quantidadeTotalComprada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:textColor="@color/novoroxo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Total"
+            android:textSize="20sp"
+            android:textColor="@color/novoroxo" />
+
+        <TextView
+            android:id="@+id/valorTotalGasto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:textColor="@color/novoroxo" />
+    </LinearLayout>
 </LinearLayout>

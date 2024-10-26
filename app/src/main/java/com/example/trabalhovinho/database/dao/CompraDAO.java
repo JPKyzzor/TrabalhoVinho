@@ -1,13 +1,18 @@
 package com.example.trabalhovinho.database.dao;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
+import android.util.Pair;
 
 import com.example.trabalhovinho.database.DBOpenHelper;
 import com.example.trabalhovinho.database.model.CompraModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class CompraDAO extends AbstrataDAO {
 
@@ -124,6 +129,38 @@ public class CompraDAO extends AbstrataDAO {
 
         return listaCompra;
     }
+
+    public Pair<ArrayList<CompraModel>,Float> selectAllByMes(long id_usuario, String mes, String ano) {
+        ArrayList<CompraModel> listaCompra = new ArrayList<>();
+        float valorTotal = 0;
+        try {
+            Open();
+            String filtroData = "%"+ mes + "/" + ano;
+            Cursor cursor = db.query(CompraModel.TABLE_NAME, colunas,
+                    CompraModel.COLUNA_ID_USUARIO + " = ? AND " + CompraModel.COLUNA_DATA + " LIKE ?",
+                    new String[]{String.valueOf(id_usuario), filtroData}, null, null, null);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                CompraModel compra = new CompraModel();
+                compra.setId(cursor.getLong(0));
+                compra.setId_usuario(cursor.getLong(1));
+                compra.setId_cliente(cursor.getLong(2));
+                compra.setId_vinho(cursor.getLong(3));
+                compra.setData(cursor.getString(4));
+                compra.setQtd_vinhos(cursor.getInt(5));
+                compra.setPreco_total(cursor.getFloat(6));
+                valorTotal = valorTotal+cursor.getFloat(6);
+                listaCompra.add(compra);
+                cursor.moveToNext();
+            }
+            cursor.close();
+        } finally {
+            Close();
+        }
+
+        return new Pair<>(listaCompra, valorTotal);
+    }
+
 
     public ArrayList<CompraModel> selectAllByMes(long id_usuario, int mes, int ano) {
         ArrayList<CompraModel> listaCompra = new ArrayList<>();

@@ -1,26 +1,43 @@
 package com.example.trabalhovinho;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.trabalhovinho.Shared.SharedKeys;
+import com.example.trabalhovinho.adapter.RelatoriosAdapter;
+import com.example.trabalhovinho.database.dao.CompraDAO;
+import com.example.trabalhovinho.database.model.CompraModel;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class RelatorioVendasMesActivity extends AppCompatActivity {
     private Spinner mesSelect, anoSelect;
     private ImageView setinha;
+    private CompraDAO compraDAO;
+    private ListView listViewVendas;
+    private TextView valorTotal;
     int anoAtual = Calendar.getInstance().get(Calendar.YEAR);
     String[] meses = {"Selecione um mês", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
     int[] anos = {anoAtual-10, anoAtual-9, anoAtual-8, anoAtual-7, anoAtual-6, anoAtual-5, anoAtual-4, anoAtual-3, anoAtual-2, anoAtual-1, anoAtual};
+    Boolean selecionouMes = false, selecionouAno = false;
+    String mesSelecionado, anoSelecionado;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +46,8 @@ public class RelatorioVendasMesActivity extends AppCompatActivity {
         mesSelect = findViewById(R.id.selectMes);
         anoSelect = findViewById(R.id.selectAno);
         setinha = findViewById(R.id.setinha);
+        listViewVendas = findViewById(R.id.vendasListView);
+        valorTotal = findViewById(R.id.valorTotal);
 
         setinha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,8 +66,11 @@ public class RelatorioVendasMesActivity extends AppCompatActivity {
                 if(position==0){
                     return;
                 }
-                String mesSelecionado = (String) parent.getItemAtPosition(position);
+                mesSelecionado = String.format(Locale.ROOT, "%02d", position);
 
+                selecionouMes = true;
+                Log.d(mesSelecionado, "Item Selecionado: ");
+                CarregaDados();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -70,14 +92,27 @@ public class RelatorioVendasMesActivity extends AppCompatActivity {
                 if(position==0){
                     return;
                 }
-                String anoSelecionado = (String) parent.getItemAtPosition(position);
-
+                anoSelecionado = (String) parent.getItemAtPosition(position);
+                selecionouAno = true;
+                Log.d(anoSelecionado, "Item Selecionado: ");
+                CarregaDados();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
     }
+        private void CarregaDados() {
+            if(selecionouAno && selecionouMes){
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(RelatorioVendasMesActivity.this);
+                compraDAO = new CompraDAO(RelatorioVendasMesActivity.this);
+                Pair<ArrayList<CompraModel>,Float> vendas = compraDAO.selectAllByMes(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1), mesSelecionado, anoSelecionado);
+                listViewVendas.setAdapter(new RelatoriosAdapter(RelatorioVendasMesActivity.this, vendas));
+                valorTotal.setText(String.format(Locale.US, "R$ %.2f",vendas.second));
+
+            }
+        }
 
 
 }

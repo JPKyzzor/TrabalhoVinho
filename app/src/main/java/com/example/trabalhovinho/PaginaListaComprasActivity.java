@@ -75,6 +75,7 @@ public class PaginaListaComprasActivity extends AppCompatActivity {
             findViewById(R.id.purchaseListView).setVisibility(View.VISIBLE);
             findViewById(R.id.semComprasMensagem).setVisibility(View.GONE);
             listViewCompras.setAdapter(new CompraAdapter(PaginaListaComprasActivity.this, lista));
+
         }
     }
 }

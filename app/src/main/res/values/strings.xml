@@ -49,6 +49,8 @@
     <string name="relatorio_mes">Relatórios por Mês</string>
     <string name="mes">Mês</string>
     <string name="ano">Ano</string>
+    <string name="Total">Total: </string>
+    <string name="valorTotal"> </string>
 
     //UTILITARIOS
     <string name="ok">Ok</string>

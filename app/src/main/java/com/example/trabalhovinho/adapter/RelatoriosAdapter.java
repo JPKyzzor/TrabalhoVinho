@@ -1,19 +1,13 @@
 package com.example.trabalhovinho.adapter;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.trabalhovinho.FormularioComprasActivity;
 import com.example.trabalhovinho.R;
-import com.example.trabalhovinho.Shared.SharedKeys;
 import com.example.trabalhovinho.database.dao.ClienteDAO;
 import com.example.trabalhovinho.database.dao.VinhoDAO;
 import com.example.trabalhovinho.database.model.ClienteModel;
@@ -24,12 +18,12 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class RelatoriosAdapter extends BaseAdapter {
-    private Pair<ArrayList<CompraModel>, Float> listaVendas;
+    private Pair<ArrayList<CompraModel>, Pair<Integer, Float>> listaVendas;
     private Activity activity;
     private ClienteDAO clienteDAO;
     private VinhoDAO vinhoDAO;
 
-    public RelatoriosAdapter(Activity activity, Pair<ArrayList<CompraModel>, Float> listaVendas){
+    public RelatoriosAdapter(Activity activity, Pair<ArrayList<CompraModel>, Pair<Integer, Float>> listaVendas){
         this.activity = activity;
         this.listaVendas = listaVendas;
         this.clienteDAO = new ClienteDAO(activity);

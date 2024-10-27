@@ -32,7 +32,7 @@ public class RelatorioVendasMesActivity extends AppCompatActivity {
     private ImageView setinha;
     private CompraDAO compraDAO;
     private ListView listViewVendas;
-    private TextView valorTotal;
+    private TextView valorTotal, quantidadeVinhos;
     int anoAtual = Calendar.getInstance().get(Calendar.YEAR);
     String[] meses = {"Selecione um mês", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
     int[] anos = {anoAtual-10, anoAtual-9, anoAtual-8, anoAtual-7, anoAtual-6, anoAtual-5, anoAtual-4, anoAtual-3, anoAtual-2, anoAtual-1, anoAtual};
@@ -48,6 +48,7 @@ public class RelatorioVendasMesActivity extends AppCompatActivity {
         setinha = findViewById(R.id.setinha);
         listViewVendas = findViewById(R.id.vendasListView);
         valorTotal = findViewById(R.id.valorTotal);
+        quantidadeVinhos = findViewById(R.id.quantidadeTotalComprada);
 
         setinha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,9 +108,10 @@ public class RelatorioVendasMesActivity extends AppCompatActivity {
             if(selecionouAno && selecionouMes){
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(RelatorioVendasMesActivity.this);
                 compraDAO = new CompraDAO(RelatorioVendasMesActivity.this);
-                Pair<ArrayList<CompraModel>,Float> vendas = compraDAO.selectAllByMes(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1), mesSelecionado, anoSelecionado);
+                Pair<ArrayList<CompraModel>, Pair<Integer, Float>> vendas = compraDAO.selectAllByMes(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1), mesSelecionado, anoSelecionado);
                 listViewVendas.setAdapter(new RelatoriosAdapter(RelatorioVendasMesActivity.this, vendas));
-                valorTotal.setText(String.format(Locale.US, "R$ %.2f",vendas.second));
+                valorTotal.setText(String.format(Locale.US, "R$ %.2f",vendas.second.second));
+                quantidadeVinhos.setText(String.valueOf(vendas.second.first));
 
             }
         }

@@ -130,9 +130,10 @@ public class CompraDAO extends AbstrataDAO {
         return listaCompra;
     }
 
-    public Pair<ArrayList<CompraModel>,Float> selectAllByMes(long id_usuario, String mes, String ano) {
+    public Pair<ArrayList<CompraModel>, Pair<Integer, Float>> selectAllByMes(long id_usuario, String mes, String ano) {
         ArrayList<CompraModel> listaCompra = new ArrayList<>();
         float valorTotal = 0;
+        int quantidadeTotalComprada = 0;
         try {
             Open();
             String filtroData = "%"+ mes + "/" + ano;
@@ -148,6 +149,7 @@ public class CompraDAO extends AbstrataDAO {
                 compra.setId_vinho(cursor.getLong(3));
                 compra.setData(cursor.getString(4));
                 compra.setQtd_vinhos(cursor.getInt(5));
+                quantidadeTotalComprada += cursor.getInt(5);
                 compra.setPreco_total(cursor.getFloat(6));
                 valorTotal = valorTotal+cursor.getFloat(6);
                 listaCompra.add(compra);
@@ -158,7 +160,7 @@ public class CompraDAO extends AbstrataDAO {
             Close();
         }
 
-        return new Pair<>(listaCompra, valorTotal);
+        return new Pair<>(listaCompra, new Pair<>(quantidadeTotalComprada, valorTotal));
     }
 
     public CompraModel selectById(long id) {
@@ -174,6 +176,7 @@ public class CompraDAO extends AbstrataDAO {
                 compra.setId_vinho(cursor.getLong(3));
                 compra.setData(cursor.getString(4));
                 compra.setQtd_vinhos(cursor.getInt(5));
+
             }
             if (cursor != null) {
                 cursor.close();

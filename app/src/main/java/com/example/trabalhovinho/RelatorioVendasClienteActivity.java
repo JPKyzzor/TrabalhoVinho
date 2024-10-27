@@ -88,8 +88,7 @@ public class RelatorioVendasClienteActivity extends AppCompatActivity {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(RelatorioVendasClienteActivity.this);
             compraDAO = new CompraDAO(RelatorioVendasClienteActivity.this);
             Pair<ArrayList<CompraModel>, Pair<Integer, Float>> vendas = compraDAO.selectRelatorioPorCliente(idClienteSelecionado);
-            listViewVendas.setAdapter(new RelatoriosAdapter(RelatorioVendasClienteActivity.this,
-                    new Pair<>(vendas.first, vendas.second.second)));
+            listViewVendas.setAdapter(new RelatoriosAdapter(RelatorioVendasClienteActivity.this, vendas));
             valorTotalGasto.setText(String.format(Locale.US, "R$ %.2f", vendas.second.second));
             quantidadeTotalComprada.setText(String.valueOf(vendas.second.first));
         }

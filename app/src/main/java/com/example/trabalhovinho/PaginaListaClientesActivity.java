@@ -7,8 +7,9 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,31 +23,40 @@ import com.example.trabalhovinho.database.model.ClienteModel;
 import java.util.ArrayList;
 
 public class PaginaListaClientesActivity extends AppCompatActivity {
-    private Button botaoCadastro;
     private ListView listViewClientes;
+    private Button botaoCadastro;
     private ClienteDAO clienteDAO;
     private ImageView setinha;
+    private TextView semClientesMensagem;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_lista_clientes);
+
         botaoCadastro = findViewById(R.id.addClientButton);
+        listViewClientes = findViewById(R.id.clientListView);
         setinha = findViewById(R.id.setinha);
+        semClientesMensagem = findViewById(R.id.semClientesMensagem);
+
         setinha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 UsefulFunctions.finalizaIntent(PaginaListaClientesActivity.this);
             }
         });
-        listViewClientes = findViewById(R.id.clientListView);
+
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PaginaListaClientesActivity.this);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putLong(SharedKeys.KEY_ID_CLIENTE_EDIT, -1);
+                edit.apply();
                 Intent it = new Intent(PaginaListaClientesActivity.this, FormularioClienteActivity.class);
                 startActivity(it);
             }
         });
-        carregarDados();
     }
 
     @Override
@@ -59,8 +69,14 @@ public class PaginaListaClientesActivity extends AppCompatActivity {
         clienteDAO = new ClienteDAO(this);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PaginaListaClientesActivity.this);
         ArrayList<ClienteModel> lista = clienteDAO.selectAll(preferences.getLong(SharedKeys.KEY_ID_USUARIO_LOGADO, -1));
-        Log.d("ListaClientes", "Tamanho da lista: " + lista.size());
-        listViewClientes.setAdapter(new ClienteAdapter(PaginaListaClientesActivity.this,lista));
-    }
 
+        if (lista.isEmpty()) {
+            listViewClientes.setVisibility(View.GONE);
+            semClientesMensagem.setVisibility(View.VISIBLE);
+        } else {
+            listViewClientes.setVisibility(View.VISIBLE);
+            semClientesMensagem.setVisibility(View.GONE);
+            listViewClientes.setAdapter(new ClienteAdapter(PaginaListaClientesActivity.this, lista));
+        }
+    }
 }

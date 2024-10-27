@@ -32,9 +32,22 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"/>
 
+    <TextView
+        android:id="@+id/semClientesMensagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sem_clientes"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/novoroxo"/>
+
     <ListView
         android:id="@+id/clientListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:divider="@color/novoroxo"
+        android:dividerHeight="1dp"
+        android:visibility="gone"/>
 </LinearLayout>

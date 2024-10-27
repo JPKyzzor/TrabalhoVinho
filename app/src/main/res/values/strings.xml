@@ -77,9 +77,11 @@
     <string name="placeholderEnderecoCliente">Criciúma/SC</string>
     <string name="placeholderCpfCnpjCliente">123.456.789-00</string>
     <string name="placeholderTelefoneCliente">(51)995459125</string>
+    <string name="sem_clientes">Não há clientes cadastrados</string>
 
     //FORMULARIO VINHOS
     <string name="salvar_vinho">Salvar Vinho</string>
+    <string name="sem_vinhos">Não há vinhos cadastrados</string>
 
     //Itens vinhos
     <string name="placeholderNomeVinho">Exemplo nome de vinho</string>

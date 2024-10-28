@@ -156,7 +156,9 @@ public class FormularioComprasActivity extends AppCompatActivity {
 
         //Montagem seletor vinhos
         VinhoModel itemPadraoVinho = new VinhoModel();
-        itemPadraoVinho.setNome("Selecione um vinho");
+        itemPadraoVinho.setNome("Nome do vinho");
+        itemPadraoVinho.setTipo("tipo");
+        itemPadraoVinho.setSafra("safra");
         itemPadraoVinho.setId(-1);
         listaVinhos.add(0, itemPadraoVinho);
         spinnerVinhos.setAdapter(new VinhoSelectAdapter(FormularioComprasActivity.this, listaVinhos));

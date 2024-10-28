@@ -40,7 +40,8 @@ public class VinhoSelectAdapter extends BaseAdapter {
         }
         VinhoModel vinho = listaVinhos.get(position);
         TextView nome = convertView.findViewById(R.id.nomeVinho);
-        nome.setText(vinho.getNome());
+        String texto = vinho.getNome()+'/'+vinho.getTipo()+'/'+vinho.getSafra();
+        nome.setText(texto);
 
         return convertView;
     }

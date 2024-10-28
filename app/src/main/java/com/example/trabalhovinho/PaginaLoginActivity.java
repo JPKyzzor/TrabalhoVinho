@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -28,6 +29,7 @@ public class PaginaLoginActivity extends AppCompatActivity {
     private CheckBox checkLembrar;
     private ArrayList<UsuarioModel> usuarios;
     private UsuarioDAO usuarioDAO;
+    private TextView botaoEsqueceuSenha;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class PaginaLoginActivity extends AppCompatActivity {
         checkLembrar = findViewById(R.id.checkLembrar);
         botaoEntrar = findViewById(R.id.loginButton);
         botaoCadastrar = findViewById(R.id.createAccountButton);
+        botaoEsqueceuSenha = findViewById(R.id.forgotPasswordTextView);
 
         botaoCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +67,14 @@ public class PaginaLoginActivity extends AppCompatActivity {
                 }else{
                     mostrarAlerta("Erro", "Usuário ou senha inválidos", "OK");
                 }
+            }
+        });
+
+        botaoEsqueceuSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(PaginaLoginActivity.this, PaginaEsqueceuSenhaActivity.class);
+                startActivity(it);
             }
         });
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PaginaLoginActivity.this);
